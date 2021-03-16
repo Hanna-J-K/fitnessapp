@@ -1,0 +1,26 @@
+@startuml FitnessUml
+skinparam Style strictuml
+class User {
+    string name
+    int age
+    int weight
+    int height
+}
+
+
+
+class Exercise {
+
+}
+
+class Equipment {
+
+}
+
+abstract Training {
+
+}
+
+
+
+@enduml
