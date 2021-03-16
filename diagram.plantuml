@@ -1,26 +1,97 @@
 @startuml FitnessUml
 skinparam Style strictuml
 class User {
-    string name
+    String name
     int age
     int weight
     int height
+    Goal goal
+    -addNewGoal()
+    -modifyGoal()
+    -setGoal()
+    +addTraining()
+    +modifyTraining()
 }
 
+User o-- Goal
+User *-- Training
 
+class Goal {
+    String name
+    String description
+    date goalDate
+}
+
+class TrainingDataBase {
+    dict trainings
+    +chooseTraining()
+    +removeTraining()
+}
+
+TrainingDataBase --o Training
+ExerciseDataBase --o Exercise
+
+class ExerciseDataBase {
+    dict exercises
+    -addExercise()
+    +chooseExercise()
+    +removeExercise()
+}
 
 class Exercise {
-
+    String name
+    bool hasEquipment
+    enum type
+    addEquipment()
+    removeEquipment()
 }
+
+Equipment -o Exercise
+Exercise -* Training
 
 class Equipment {
+    String name
+}
+
+abstract class Training {
+    {abstract} addExercise()
+    {abstract} removeExercise()
+    {abstract} createExercise()
+}
+
+Training <|-- BodyWeight
+Training <|-- Cardio
+Training <|-- WeightLifting
+Training <|-- Mixed
+
+class BodyWeight {
+    int reps
+    int sets
+    +addSets()
+    +removeSets()
+}
+
+class Cardio {
+    time time 
+    float distance
+    +addDistance()
+    +addTime()
 
 }
 
-abstract Training {
-
+class WeightLifting {
+    int reps
+    int sets
+    +addSets()
+    +removeSets()
 }
 
+class Mixed {
+    int reps
+    int sets
+    +addSets()
+    +removeSets()
+}
 
 
 @enduml
