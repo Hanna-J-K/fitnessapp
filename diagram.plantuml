@@ -13,9 +13,6 @@ class User {
     +modifyTraining()
 }
 
-User o-- Goal
-User *-- Training
-
 class Goal {
     String name
     String description
@@ -27,9 +24,6 @@ class TrainingDataBase {
     +chooseTraining()
     +removeTraining()
 }
-
-TrainingDataBase --o Training
-ExerciseDataBase --o Exercise
 
 class ExerciseDataBase {
     dict exercises
@@ -46,11 +40,10 @@ class Exercise {
     removeEquipment()
 }
 
-Equipment -o Exercise
-Exercise -* Training
-
 class Equipment {
     String name
+    int weight
+    +modifyWeight()
 }
 
 abstract class Training {
@@ -58,11 +51,6 @@ abstract class Training {
     {abstract} removeExercise()
     {abstract} createExercise()
 }
-
-Training <|-- BodyWeight
-Training <|-- Cardio
-Training <|-- WeightLifting
-Training <|-- Mixed
 
 class BodyWeight {
     int reps
@@ -93,5 +81,15 @@ class Mixed {
     +removeSets()
 }
 
+User o-- Goal
+User *-- Training
+Equipment -o Exercise
+Exercise -* Training
+TrainingDataBase --o Training
+ExerciseDataBase --o Exercise
+Training <|-- BodyWeight
+Training <|-- Cardio
+Training <|-- WeightLifting
+Training <|-- Mixed
 
 @enduml
