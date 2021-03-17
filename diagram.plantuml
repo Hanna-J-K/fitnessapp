@@ -9,6 +9,7 @@ class User {
     -addNewGoal()
     -modifyGoal()
     -setGoal()
+    -setIntensity()
     +addTraining()
     +modifyTraining()
 }
@@ -36,8 +37,8 @@ class Exercise {
     String name
     bool hasEquipment
     enum type
-    addEquipment()
-    removeEquipment()
+    +addEquipment()
+    +removeEquipment()
 }
 
 class Equipment {
