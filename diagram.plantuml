@@ -56,30 +56,60 @@ abstract class Training {
 class BodyWeight {
     int reps
     int sets
-    +addSets()
-    +removeSets()
+    {abstract} addSets()
+    {abstract} removeSets()
 }
 
 class Cardio {
     time time 
     float distance
-    +addDistance()
-    +addTime()
+    {abstract} addDistance()
+    {abstract} addTime()
 
 }
 
 class WeightLifting {
     int reps
     int sets
-    +addSets()
-    +removeSets()
+    {abstract} addSets()
+    {abstract} removeSets()
 }
 
 class Mixed {
     int reps
     int sets
-    +addSets()
-    +removeSets()
+    {abstract} addSets()
+    {abstract} removeSets()
+}
+
+class Calisthenics {
+    int reps
+    int sets
+}
+
+class Yoga {
+    time time
+    +addTime()
+}
+
+class HIIT {
+    time time
+    int sets
+}
+
+class Jogging {
+    time time
+    float distance
+}
+
+class Machines {
+    int reps
+    int sets
+}
+
+class FreeWeight {
+    int reps
+    int sets
 }
 
 User o-- Goal
@@ -92,5 +122,12 @@ Training <|-- BodyWeight
 Training <|-- Cardio
 Training <|-- WeightLifting
 Training <|-- Mixed
+
+BodyWeight <|-- Calisthenics
+BodyWeight <|-- Yoga
+Cardio <|-- HIIT
+Cardio <|-- Jogging
+WeightLifting <|-- FreeWeight
+WeightLifting <|-- Machines
 
 @enduml
