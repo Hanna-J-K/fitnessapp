@@ -23,8 +23,8 @@ class MainWindow:
         sys.exit(app.exec())
 
     def initGui(self, window):
-        user_btn = QtWidgets.QPushButton("LOGIN", window)
-        user_btn.setGeometry(225, 600, 100, 50)
-        user_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
+        create_training_btn = QtWidgets.QPushButton("CREATE", window)
+        create_training_btn.setGeometry(225, 600, 100, 50)
+        create_training_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
 
 main = MainWindow()
