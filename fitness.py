@@ -9,38 +9,60 @@ from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
 
+
+# in-between menus navigation
 def goToMain():
-    widget.setCurrentIndex(0)
+    widget.setCurrentIndex(0) # main menu
+
+def goToBrowse():
+    widget.setCurrentIndex(1) # browse trainings menu
+
+def goToCreateTraining():
+    widget.setCurrentIndex(2) # create new training menu
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         loadUi("MainMenu.ui", self)
-        self.browse_btn.clicked.connect(self.goToBrowse)
-
-    def goToBrowse(self):
-        widget.setCurrentIndex(widget.currentIndex()+1)
+        self.browse_btn.clicked.connect(goToBrowse)
+        self.create_btn.clicked.connect(goToCreateTraining)
 
 class BrowseTrainingsWindow(QMainWindow):
     def __init__(self):
         super(BrowseTrainingsWindow, self).__init__()
         loadUi("BrowseTrainingsWindow.ui", self)
         self.main_menu_btn.clicked.connect(goToMain)
-    
+        self.new_training_btn.clicked.connect(goToCreateTraining)
+
+class CreateNewTraining(QMainWindow):
+    def __init__(self):
+        super(CreateNewTraining, self).__init__()
+        loadUi("CreateNewTraining.ui", self)
+        self.main_menu_btn.clicked.connect(goToMain)
+
 
 
 # main
 app = QApplication(sys.argv)
 widget = QtWidgets.QStackedWidget()
+
 main_window = MainWindow()
 browse_window = BrowseTrainingsWindow()
+create_training_window = CreateNewTraining()
+
+# add to list of widgets to switch between windows
 widget.addWidget(main_window)
 widget.addWidget(browse_window)
+widget.addWidget(create_training_window)
+
+
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
 widget.show()
 
+
+
 try:
     sys.exit(app.exec_())
 except:
-    print("Something went wrong. Exiting...")
+    print("Exiting the app. Bye bye! :)")
