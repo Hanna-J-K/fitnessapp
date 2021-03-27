@@ -11,39 +11,18 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FITNESS APP</string>
+   <string>BROWSE TRAININGS</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #1D1D1D;
-color: #FB98AD;</string>
+color: #FB98AD</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="create_btn">
+   <widget class="QPushButton" name="edit_training_btn">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>400</y>
-      <width>151</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;
-</string>
-    </property>
-    <property name="text">
-     <string>CREATE TRAINING</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="browse_btn">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>400</y>
+      <x>130</x>
+      <y>460</y>
       <width>151</width>
       <height>71</height>
      </rect>
@@ -56,55 +35,98 @@ font: 8pt &quot;PRIMETIME&quot;;
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>BROWSE TRAININGS</string>
+     <string>EDIT TRAINING</string>
     </property>
    </widget>
-   <widget class="QLabel" name="welcome_lbl">
+   <widget class="QPushButton" name="delete_training_btn">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>70</y>
-      <width>441</width>
-      <height>171</height>
+      <x>330</x>
+      <y>460</y>
+      <width>151</width>
+      <height>71</height>
      </rect>
     </property>
-    <property name="focusPolicy">
-     <enum>Qt::NoFocus</enum>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;PRIMETIME&quot;;
-margin: auto;
-border: 5px solid #FB98AD;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+     <string notr="true">border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>HI, WERONIKA!</string>
+     <string>DELETE TRAINING</string>
     </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
+   </widget>
+   <widget class="QPushButton" name="new_training_btn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>460</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
     </property>
-    <property name="wordWrap">
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>NEW TRAINING</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="trainigs_scroll">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>60</y>
+      <width>561</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #0C0C0C;</string>
+    </property>
+    <property name="widgetResizable">
      <bool>true</bool>
     </property>
-    <property name="margin">
-     <number>0</number>
-    </property>
-    <property name="indent">
-     <number>90</number>
-    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>559</width>
+       <height>369</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="profile_btn">
+   <widget class="QLabel" name="ur_train_lbl">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>270</y>
-      <width>151</width>
-      <height>71</height>
+      <x>120</x>
+      <y>15</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>YOUR TRAININGS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="main_menu_btn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>61</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
@@ -115,7 +137,7 @@ border: 5px solid #FB98AD;</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>PROFILE</string>
+     <string>BACK</string>
     </property>
    </widget>
   </widget>
