@@ -13,7 +13,8 @@ class MainWindow:
         app = QtWidgets.QApplication(sys.argv)
 
         window = QtWidgets.QMainWindow()
-        self.initGui(window)
+        self.createTraining(window)
+        self.browseTrainings(window)
 
         window.show()
         window.setWindowTitle("Fitness App")
@@ -22,9 +23,19 @@ class MainWindow:
 
         sys.exit(app.exec())
 
-    def initGui(self, window):
+    def createTraining(self, window):
         create_training_btn = QtWidgets.QPushButton("CREATE", window)
         create_training_btn.setGeometry(225, 600, 100, 50)
         create_training_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
+
+    def browseTrainings(self, window):
+        browse_training_btn = QtWidgets.QPushButton("BROWSE", window)
+        browse_training_btn.setGeometry(425, 600, 100, 50)
+        browse_training_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
+
+
+class TrainingsWindow:
+    def __init__(self):
+        
 
 main = MainWindow()
