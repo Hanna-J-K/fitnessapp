@@ -5,37 +5,25 @@
 # #F8567B - i love pink
 
 import sys
-
+from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
 
-class MainWindow:
+class MainWindow(QMainWindow):
     def __init__(self):
-        app = QtWidgets.QApplication(sys.argv)
+        super(MainWindow, self).__init__()
+        loadUi("MainMenu.ui", self)
 
-        window = QtWidgets.QMainWindow()
-        self.createTraining(window)
-        self.browseTrainings(window)
+# main
+app = QApplication(sys.argv)
+widget = QtWidgets.QStackedWidget()
+main_window = MainWindow()
+widget.addWidget(main_window)
+widget.setFixedHeight(600)
+widget.setFixedWidth(800)
+widget.show()
 
-        window.show()
-        window.setWindowTitle("Fitness App")
-        window.setGeometry(1000, 250, 600, 800)
-        window.setStyleSheet("background-color: #1D1D1D")
-
-        sys.exit(app.exec())
-
-    def createTraining(self, window):
-        create_training_btn = QtWidgets.QPushButton("CREATE", window)
-        create_training_btn.setGeometry(225, 600, 100, 50)
-        create_training_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
-
-    def browseTrainings(self, window):
-        browse_training_btn = QtWidgets.QPushButton("BROWSE", window)
-        browse_training_btn.setGeometry(425, 600, 100, 50)
-        browse_training_btn.setStyleSheet("background-color: #1D1D1D; color: #FB98AD; border: 5px solid #FB98AD")
-
-
-class TrainingsWindow:
-    def __init__(self):
-        
-
-main = MainWindow()
+try:
+    sys.exit(app.exec_())
+except:
+    print("Something went wrong. Exiting...")
