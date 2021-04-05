@@ -42,7 +42,7 @@ color: #FB98AD</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>EDIT TRAINING</string>
+     <string>EDIT</string>
     </property>
    </widget>
    <widget class="QPushButton" name="delete_training_btn">
@@ -62,7 +62,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>DELETE TRAINING</string>
+     <string>DELETE</string>
     </property>
    </widget>
    <widget class="QPushButton" name="new_training_btn">
@@ -82,7 +82,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>NEW TRAINING</string>
+     <string>NEW</string>
     </property>
    </widget>
    <widget class="QScrollArea" name="trainigs_scroll">
