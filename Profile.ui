@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Create New Training</string>
+   <string>PROFILE</string>
   </property>
   <property name="styleSheet">
    <string notr="true">
@@ -19,26 +19,6 @@ border: 10px solid #FB98AD;background-color: #0C0C0C;
 color: #FB98AD</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="choose_type_btn">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>20</y>
-      <width>452</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-font: 20pt &quot;PRIMETIME&quot;;</string>
-    </property>
-    <property name="text">
-     <string>CHOOSE TRAINING TYPE</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="main_menu_btn">
     <property name="geometry">
      <rect>
@@ -57,6 +37,26 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="choose_type_btn">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>20</y>
+      <width>281</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font: 20pt &quot;PRIMETIME&quot;; </string>
+    </property>
+    <property name="text">
+     <string>YOUR PROFILE</string>
     </property>
    </widget>
   </widget>
