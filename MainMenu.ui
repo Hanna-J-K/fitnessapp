@@ -63,8 +63,8 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="welcome_lbl">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>70</y>
+      <x>200</x>
+      <y>63</y>
       <width>441</width>
       <height>171</height>
      </rect>
@@ -117,6 +117,31 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>YOUR PROFILE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>100</y>
+      <width>97</width>
+      <height>97</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FB98AD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../2151416-fitness/2151416-fitness/png/user.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

@@ -7,7 +7,7 @@
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QComboBox
 
 
 # in-between menus navigation
@@ -44,6 +44,7 @@ class CreateNewTraining(QMainWindow):
         loadUi("CreateNewTraining.ui", self)
         self.main_menu_btn.clicked.connect(goToMain)
 
+
 class Profile(QMainWindow):
     def __init__(self):
         super(Profile, self).__init__()
@@ -70,6 +71,7 @@ widget.addWidget(profile_window)
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
 widget.show()
+
 
 
 
