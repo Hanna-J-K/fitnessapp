@@ -208,7 +208,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/svg/002-barbell.svg</pixmap>
+     <pixmap>../2151416-fitness/2151416-fitness/svg/007-dumbbell.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -233,11 +233,40 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/svg/005-diet.svg</pixmap>
+     <pixmap>../2151416-fitness/2151416-fitness/png/sport.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>170</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>    BODY WEIGHT</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>    YOGA</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>    CALISTHENICS</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>
