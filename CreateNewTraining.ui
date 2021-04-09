@@ -65,7 +65,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="bodyweight_btn">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>170</y>
       <width>151</width>
       <height>71</height>
@@ -82,73 +82,13 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string>BODY WEIGHT</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cardio_btn">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>170</y>
-      <width>151</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
-    </property>
-    <property name="text">
-     <string>CARDIO</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="weightlifting_btn">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>380</y>
-      <width>151</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
-    </property>
-    <property name="text">
-     <string>WEIGHT LIFTING</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="mixed_btn">
-    <property name="geometry">
-     <rect>
-      <x>520</x>
-      <y>380</y>
-      <width>151</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
-    </property>
-    <property name="text">
-     <string>MIXED</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>110</x>
       <y>170</y>
-      <width>71</width>
-      <height>71</height>
+      <width>81</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -170,10 +110,10 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>170</y>
-      <width>71</width>
-      <height>71</height>
+      <width>81</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -192,10 +132,10 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>380</y>
-      <width>71</width>
-      <height>71</height>
+      <x>110</x>
+      <y>370</y>
+      <width>81</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -217,10 +157,10 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>380</y>
-      <width>71</width>
-      <height>71</height>
+      <x>430</x>
+      <y>370</y>
+      <width>81</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -244,8 +184,8 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>190</x>
       <y>170</y>
-      <width>151</width>
-      <height>71</height>
+      <width>171</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -254,17 +194,94 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
     </property>
     <item>
      <property name="text">
-      <string>    BODY WEIGHT</string>
+      <string>   BODY WEIGHT</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>    YOGA</string>
+      <string>   YOGA</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>    CALISTHENICS</string>
+      <string>   CALISTHENICS</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>170</y>
+      <width>171</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>   CARDIO</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>   HIIT</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>   JOGGING</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>370</y>
+      <width>171</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>   WEIGHT LIFTING</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>   MACHINES</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>   FREE WEIGHTS</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_4">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>370</y>
+      <width>171</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>   MIXED</string>
      </property>
     </item>
    </widget>
