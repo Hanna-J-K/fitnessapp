@@ -14,14 +14,18 @@ from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QComboBox
 def goToMain():
     widget.setCurrentIndex(0) # main menu
 
+
 def goToBrowse():
     widget.setCurrentIndex(1) # browse trainings menu
+
 
 def goToCreateTraining():
     widget.setCurrentIndex(2) # create new training menu
 
+
 def goToProfile():
     widget.setCurrentIndex(3) # open profile
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -31,12 +35,14 @@ class MainWindow(QMainWindow):
         self.create_btn.clicked.connect(goToCreateTraining)
         self.profile_btn.clicked.connect(goToProfile)
 
+
 class BrowseTrainingsWindow(QMainWindow):
     def __init__(self):
         super(BrowseTrainingsWindow, self).__init__()
         loadUi("BrowseTrainingsWindow.ui", self)
         self.main_menu_btn.clicked.connect(goToMain)
         self.new_training_btn.clicked.connect(goToCreateTraining)
+
 
 class CreateNewTraining(QMainWindow):
     def __init__(self):
@@ -71,8 +77,6 @@ widget.addWidget(profile_window)
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
 widget.show()
-
-
 
 
 try:
