@@ -12,19 +12,19 @@ from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QComboBox
 
 # in-between menus navigation
 def goToMain():
-    widget.setCurrentIndex(0) # main menu
+    widget.setCurrentIndex(0)  # main menu
 
 
 def goToBrowse():
-    widget.setCurrentIndex(1) # browse trainings menu
+    widget.setCurrentIndex(1)  # browse trainings menu
 
 
 def goToCreateTraining():
-    widget.setCurrentIndex(2) # create new training menu
+    widget.setCurrentIndex(2)  # create new training menu
 
 
 def goToProfile():
-    widget.setCurrentIndex(3) # open profile
+    widget.setCurrentIndex(3)  # open profile
 
 
 class MainWindow(QMainWindow):
@@ -77,6 +77,7 @@ widget.addWidget(profile_window)
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
 widget.show()
+
 
 
 try:
