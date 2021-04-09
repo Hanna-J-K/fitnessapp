@@ -101,7 +101,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/svg/023-muscle.svg</pixmap>
+     <pixmap>resources/023-muscle.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -123,7 +123,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/svg/017-heart rate.svg</pixmap>
+     <pixmap>resources/017-heart rate.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -148,7 +148,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/svg/007-dumbbell.svg</pixmap>
+     <pixmap>resources/007-dumbbell.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -173,7 +173,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/png/sport.png</pixmap>
+     <pixmap>resources/sport.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

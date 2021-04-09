@@ -79,7 +79,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../2151416-fitness/2151416-fitness/png/user.svg</pixmap>
+     <pixmap>resources/user.svg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
