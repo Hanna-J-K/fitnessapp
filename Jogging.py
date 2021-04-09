@@ -1,3 +1,5 @@
 from Cardio import Cardio
 
-class Jogging:
+
+class Jogging(Cardio):
+    pass
