@@ -1,4 +1,4 @@
-from Cardio import Cardio
+from FitnessApp.Cardio import Cardio
 
 
 class Hiit(Cardio):

@@ -1,4 +1,4 @@
-from Training import Training
+from FitnessApp.Training import Training
 
 
 class WeightLifting(Training):

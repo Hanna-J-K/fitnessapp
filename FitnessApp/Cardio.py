@@ -1,10 +1,9 @@
-from Training import Training
+from FitnessApp.Training import Training
 
 
-class Mixed(Training):
-    def __init__(self, reps, sets, time, distance):
-        self.reps = reps
-        self.sets = sets
+class Cardio(Training):
+
+    def __init__(self, time, distance):
         self.time = time
         self.distance = distance
 
