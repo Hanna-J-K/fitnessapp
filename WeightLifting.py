@@ -14,4 +14,4 @@ class WeightLifting(Training):
         pass
 
     def createExercise(self):
-        pa
+        pass
