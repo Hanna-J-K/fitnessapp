@@ -4,13 +4,16 @@
 # #0C0C0C - bruce lee was a god
 # #F8567B - i love pink
 
+import json
 import sys
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, QComboBox
-
 
 # in-between menus navigation
+import FitnessApp
+
+
 def goToMain():
     widget.setCurrentIndex(0)  # main menu
 
@@ -27,13 +30,21 @@ def goToProfile():
     widget.setCurrentIndex(3)  # open profile
 
 
+def print_json():
+    calisthenics1 = FitnessApp.Calisthenics(20, 5).encode_calisthenics()
+    calisthenics1_json = json.dumps(calisthenics1)
+    print(calisthenics1_json)
+
+
 class MainWindow(QMainWindow):
+
     def __init__(self):
         super(MainWindow, self).__init__()
         loadUi("MainMenu.ui", self)
         self.browse_btn.clicked.connect(goToBrowse)
         self.create_btn.clicked.connect(goToCreateTraining)
         self.profile_btn.clicked.connect(goToProfile)
+        self.create_btn.clicked.connect(print_json())
 
 
 class BrowseTrainingsWindow(QMainWindow):
@@ -74,11 +85,11 @@ widget.addWidget(create_training_window)
 widget.addWidget(profile_window)
 
 
+
+
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
 widget.show()
-
-
 
 try:
     sys.exit(app.exec_())
