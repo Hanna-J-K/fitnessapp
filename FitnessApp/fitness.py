@@ -11,7 +11,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
 
 # in-between menus navigation
-import FitnessApp
+from FitnessApp import Calisthenics as clst, Calisthenics
 
 
 def goToMain():
@@ -31,7 +31,7 @@ def goToProfile():
 
 
 def print_json():
-    calisthenics1 = FitnessApp.Calisthenics(20, 5).encode_calisthenics()
+    calisthenics1 = Calisthenics(20, 5)
     calisthenics1_json = json.dumps(calisthenics1)
     print(calisthenics1_json)
 
