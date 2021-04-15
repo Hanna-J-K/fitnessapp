@@ -4,14 +4,12 @@
 # #0C0C0C - bruce lee was a god
 # #F8567B - i love pink
 
-import json
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
 
 # in-between menus navigation
-from FitnessApp import Calisthenics as clst, Calisthenics
 
 
 def goToMain():
@@ -30,10 +28,11 @@ def goToProfile():
     widget.setCurrentIndex(3)  # open profile
 
 
-def print_json():
-    calisthenics1 = Calisthenics(20, 5)
-    calisthenics1_json = json.dumps(calisthenics1)
-    print(calisthenics1_json)
+# def print_json():
+#     clst.Calisthenics(20, 5)
+#     clst.Calisthenics.encode_calisthenics(clst.Calisthenics)
+#     calisthenics1_json = json.dumps(calisthenics1)
+#     print(calisthenics1_json)
 
 
 class MainWindow(QMainWindow):
@@ -44,7 +43,7 @@ class MainWindow(QMainWindow):
         self.browse_btn.clicked.connect(goToBrowse)
         self.create_btn.clicked.connect(goToCreateTraining)
         self.profile_btn.clicked.connect(goToProfile)
-        self.create_btn.clicked.connect(print_json())
+        # self.create_btn.clicked.connect(print_json())
 
 
 class BrowseTrainingsWindow(QMainWindow):

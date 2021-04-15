@@ -1,3 +1,4 @@
+
 class Exercise:
     def __init__(self, name, exercise_type, has_equipment=False):
         self.name = name

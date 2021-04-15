@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class Training(ABC):
 
-    def ____init__(self, name):
+    def __init__(self, name):
         self.name = name
         super().__init__()
 

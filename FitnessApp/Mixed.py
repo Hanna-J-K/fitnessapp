@@ -2,7 +2,8 @@ from FitnessApp.Training import Training
 
 
 class Mixed(Training):
-    def __init__(self, reps, sets, time, distance):
+    def __init__(self, reps, sets, time, distance, name):
+        super().__init__(name)
         self.reps = reps
         self.sets = sets
         self.time = time
