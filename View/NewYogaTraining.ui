@@ -182,6 +182,35 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
      <string>SESSION TIME</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="remove_training_btn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>380</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PRIMETIME</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 12pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>REMOVE</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
