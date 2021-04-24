@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>451</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,9 +21,9 @@ color: #FB98AD;</string>
    <widget class="QPushButton" name="choose_type_btn">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>100</x>
       <y>30</y>
-      <width>501</width>
+      <width>591</width>
       <height>45</height>
      </rect>
     </property>
@@ -101,17 +101,17 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
     </item>
     <item>
      <property name="text">
-      <string>PUSH UP</string>
+      <string>BARBELL DEADLIFT</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>SIT UP</string>
+      <string>GOBLET SQUAT</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>SQUAT</string>
+      <string>FARMERS WALK</string>
      </property>
     </item>
    </widget>
@@ -247,28 +247,6 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
      <string>CREATE</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="training_name">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>250</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 5px solid #FB98AD;
-font: 16pt &quot;MS Shell Dlg 2&quot;;
-</string>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8.25pt;&quot;&gt;Training Name&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="remove_training_btn">
     <property name="geometry">
      <rect>
@@ -296,6 +274,24 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>REMOVE</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="training_name">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>240</y>
+      <width>291</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 10px solid #FB98AD;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+</string>
+    </property>
+    <property name="plainText">
+     <string>Training name</string>
     </property>
    </widget>
   </widget>

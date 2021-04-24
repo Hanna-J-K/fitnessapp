@@ -21,9 +21,9 @@ color: #FB98AD;</string>
    <widget class="QPushButton" name="choose_type_btn">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>110</x>
       <y>30</y>
-      <width>501</width>
+      <width>591</width>
       <height>45</height>
      </rect>
     </property>
@@ -287,6 +287,24 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>REMOVE</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="training_name">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>240</y>
+      <width>291</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 10px solid #FB98AD;
+font: 12pt &quot;MS Shell Dlg 2&quot;;
+</string>
+    </property>
+    <property name="plainText">
+     <string>Training name</string>
     </property>
    </widget>
   </widget>
