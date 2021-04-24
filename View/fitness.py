@@ -5,9 +5,16 @@
 # #F8567B - i love pink
 
 import sys
+
+# sys.path.insert(0, "C:\\Users\\hanka\\PycharmProjects\\fitnessapp\\FitnessApp")
+
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
+
+from FitnessApp.Calisthenics import Calisthenics
+
+from FitnessApp.Exercise import Exercise
 
 
 # in-between menus navigation
@@ -60,6 +67,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         loadUi("MainMenu.ui", self)
+        print(sys.path)
         self.browse_btn.clicked.connect(go_to_browse)
         self.create_btn.clicked.connect(go_to_create_training)
         self.profile_btn.clicked.connect(go_to_profile)
@@ -135,6 +143,21 @@ class NewCalisthenicsTraining(QMainWindow):
     def __init__(self):
         super(NewCalisthenicsTraining, self).__init__()
         loadUi("NewCalisthenicsTraining.ui", self)
+
+        self.reps = 0
+        self.sets = 0
+        self.name = "eh2"
+
+        def sets_and_reps():
+            self.reps = self.rep_spin.value()
+            self.sets = self.set_spin.value()
+            self.name = self.training_name.text()
+
+        self.add_btn.clicked.connect(sets_and_reps)
+
+        self.training = Calisthenics(self.reps, self.sets, self.name)
+        #
+        self.create_training_btn.clicked.connect(lambda: print(self.reps))
 
 
 class NewFreeWeightTraining(QMainWindow):
