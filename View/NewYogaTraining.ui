@@ -207,6 +207,26 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
      <string>Training name</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="back_btn">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>61</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>BACK</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

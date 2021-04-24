@@ -180,6 +180,8 @@ class NewCalisthenicsTraining(QMainWindow):
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        self.back_btn.clicked.connect(go_to_create_training)
+
 
 class NewFreeWeightTraining(QMainWindow):
     def __init__(self):
@@ -218,6 +220,8 @@ class NewFreeWeightTraining(QMainWindow):
 
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
+
+        self.back_btn.clicked.connect(go_to_create_training)
 
 
 class NewMachinesTraining(QMainWindow):
@@ -258,23 +262,28 @@ class NewMachinesTraining(QMainWindow):
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        self.back_btn.clicked.connect(go_to_create_training)
+
 
 class NewJoggingTraining(QMainWindow):
     def __init__(self):
         super(NewJoggingTraining, self).__init__()
         loadUi("NewJoggingTraining.ui", self)
+        self.back_btn.clicked.connect(go_to_create_training)
 
 
 class NewHiitTraining(QMainWindow):
     def __init__(self):
         super(NewHiitTraining, self).__init__()
         loadUi("NewHiitTraining.ui", self)
+        self.back_btn.clicked.connect(go_to_create_training)
 
 
 class NewYogaTraining(QMainWindow):
     def __init__(self):
         super(NewYogaTraining, self).__init__()
         loadUi("NewYogaTraining.ui", self)
+        self.back_btn.clicked.connect(go_to_create_training)
 
 
 # main
