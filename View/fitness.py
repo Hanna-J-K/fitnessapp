@@ -19,6 +19,8 @@ from FitnessApp.Exercise import Exercise
 
 
 # in-between menus navigation
+from FitnessApp.FreeWeight import FreeWeight
+from FitnessApp.Machines import Machines
 
 
 def go_to_main():
@@ -40,7 +42,7 @@ def go_to_profile():
 def go_to_new_training(training):
     if training == "   CALISTHENICS":
         widget.setCurrentIndex(4)
-    elif training == "   FREE WEIGHT":
+    elif training == "   FREE WEIGHTS":
         widget.setCurrentIndex(5)
     elif training == "   MACHINES":
         widget.setCurrentIndex(6)
@@ -147,7 +149,10 @@ class NewCalisthenicsTraining(QMainWindow):
 
         self.reps = 0
         self.sets = 0
+        self.training_title = "ggg"
         self.exercise_name = "eh2"
+
+        self.exercise_list = []
 
         def add_exercise_to_training():
             self.reps = self.rep_spin.value()
@@ -157,20 +162,22 @@ class NewCalisthenicsTraining(QMainWindow):
             self.exercise_name = self.exercise_combo.currentText()
             self.exercise = ExerciseRepetitive(self.exercise_name, "bw", self.sets, self.reps, 0, 0)
             self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
             self.exercise.print_information()
 
-
         def remove_exercise_from_training():
+            print(self.training_list.currentItem())
             self.training_list.takeItem(self.training_list.currentItem())
 
         def create_training():
-            self.training = Calisthenics(self.reps, self.sets, self.name)
-            self.training.print_reps_and_sets()
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = Calisthenics(self.training_title, self.exercise_list)
+            print(self.training.name)
 
-        self.add_btn.clicked.connect(add_exercise_to_training)##
+        self.add_btn.clicked.connect(add_exercise_to_training)
 
         self.create_training_btn.clicked.connect(create_training)
-        self.remove_btn.clicked.connect(remove_exercise_from_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
 
 class NewFreeWeightTraining(QMainWindow):
@@ -178,11 +185,75 @@ class NewFreeWeightTraining(QMainWindow):
         super(NewFreeWeightTraining, self).__init__()
         loadUi("NewFreeWeightTraining.ui", self)
 
+        self.reps = 0
+        self.sets = 0
+        self.training_title = "eh23"
+        self.exercise_name = "eh2"
+
+        self.exercise_list = []
+
+        def add_exercise_to_training():
+            self.reps = self.rep_spin.value()
+            print(self.reps)
+            self.sets = self.set_spin.value()
+            print(self.sets)
+            self.exercise_name = self.exercise_combo.currentText()
+            self.exercise = ExerciseRepetitive(self.exercise_name, "fw", self.sets, self.reps, 0, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
+            self.exercise.print_information()
+
+        def remove_exercise_from_training():
+            print(self.training_list.currentItem())
+            self.training_list.takeItem(self.training_list.currentItem())
+
+        def create_training():
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = FreeWeight(self.training_title, self.exercise_list)
+            print(self.training.name)
+
+        self.add_btn.clicked.connect(add_exercise_to_training)
+
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
+
 
 class NewMachinesTraining(QMainWindow):
     def __init__(self):
         super(NewMachinesTraining, self).__init__()
         loadUi("NewMachinesTraining.ui", self)
+
+        self.reps = 0
+        self.sets = 0
+        self.training_title = "hh23"
+        self.exercise_name = "eh2"
+
+        self.exercise_list = []
+
+        def add_exercise_to_training():
+            self.reps = self.rep_spin.value()
+            print(self.reps)
+            self.sets = self.set_spin.value()
+            print(self.sets)
+            self.exercise_name = self.exercise_combo.currentText()
+            self.exercise = ExerciseRepetitive(self.exercise_name, "mach", self.sets, self.reps, 0, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
+            self.exercise.print_information()
+
+        def remove_exercise_from_training():
+            print(self.training_list.currentItem())
+            self.training_list.takeItem(self.training_list.currentItem())
+
+        def create_training():
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = Machines(self.training_title, self.exercise_list)
+            print(self.training.name)
+
+        self.add_btn.clicked.connect(add_exercise_to_training)
+
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
 
 class NewJoggingTraining(QMainWindow):

@@ -3,13 +3,8 @@ from FitnessApp.Training import Training
 
 class WeightLifting(Training):
 
-    def __init__(self, reps, sets, name):
-        super().__init__(name)
-        self.reps = reps
-        self.sets = sets
-
-    def add_exercise(self):
-        pass
+    def __init__(self, name, exercise_list):
+        super().__init__(name, exercise_list)
 
     def remove_exercise(self):
         pass
