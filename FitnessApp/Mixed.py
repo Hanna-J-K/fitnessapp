@@ -9,7 +9,7 @@ class Mixed(Training):
         self.time = time
         self.distance = distance
 
-    def addExercise(self):
+    def add_exercise(self):
         pass
 
     def removeExercise(self):

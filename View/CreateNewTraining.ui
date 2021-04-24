@@ -82,104 +82,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string>BODY WEIGHT</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>170</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FB98AD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>resources/023-muscle.svg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>170</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FB98AD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>resources/017-heart rate.svg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>370</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FB98AD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>resources/007-dumbbell.svg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>370</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FB98AD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>resources/sport.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="bw_combo">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -208,7 +111,7 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="cardio_combo">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -237,11 +140,11 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="comboBox_3">
+   <widget class="QComboBox" name="wl_combo">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>370</y>
+      <y>300</y>
       <width>171</width>
       <height>81</height>
      </rect>
@@ -266,11 +169,11 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="comboBox_4">
+   <widget class="QComboBox" name="mixed_combo">
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>370</y>
+      <y>300</y>
       <width>171</width>
       <height>81</height>
      </rect>
@@ -284,6 +187,219 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
       <string>   MIXED</string>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="next_btn">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>500</y>
+      <width>111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PRIMETIME</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 12pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>NEXT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chosen_type_label">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>420</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PRIMETIME</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>WaitCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="chosen_training_label">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>460</y>
+      <width>221</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PRIMETIME</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bw_btn">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>170</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: #FB98AD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/023-muscle.svg</normaloff>resources/023-muscle.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cardio_btn">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>170</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: #FB98AD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/017-heart rate.svg</normaloff>resources/017-heart rate.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="wl_btn">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>300</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: #FB98AD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/007-dumbbell.svg</normaloff>resources/007-dumbbell.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="mixed_btn">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>300</y>
+      <width>81</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+background-color: #FB98AD;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>resources/sport.png</normaloff>resources/sport.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
    </widget>
   </widget>
  </widget>

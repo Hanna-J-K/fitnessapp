@@ -35,6 +35,7 @@ def goToProfile():
 #     print(calisthenics1_json)
 
 
+
 class MainWindow(QMainWindow):
 
     def __init__(self):
@@ -60,6 +61,37 @@ class CreateNewTraining(QMainWindow):
         loadUi("CreateNewTraining.ui", self)
         self.main_menu_btn.clicked.connect(goToMain)
 
+        def set_chosen_training(btn):
+            if btn == self.bw_btn:
+                if self.bw_combo.currentIndex() != 0:
+                    self.chosen_training_label.setText(self.bw_combo.currentText())
+                    self.chosen_type_label.setText("Body Weight")
+                else:
+                    self.chosen_type_label.setText("Body Weight")
+                    self.chosen_training_label.setText("Pick bodyweight training type above!")
+            elif btn == self.wl_btn:
+                if self.wl_combo.currentIndex() != 0:
+                    self.chosen_training_label.setText(self.wl_combo.currentText())
+                    self.chosen_type_label.setText("Weight Lifting")
+                else:
+                    self.chosen_type_label.setText("Weight Lifting")
+                    self.chosen_training_label.setText("Pick weight lifting training type above!")
+            elif btn == self.cardio_btn:
+                if self.cardio_combo.currentIndex() != 0:
+                    self.chosen_training_label.setText(self.cardio_combo.currentText())
+                    self.chosen_type_label.setText("Cardio")
+                else:
+                    self.chosen_type_label.setText("Cardio")
+                    self.chosen_training_label.setText("Pick cardio training type above!")
+            elif btn == self.mixed_btn:
+                self.chosen_training_label.setText(self.mixed_combo.currentText())
+                self.chosen_type_label.setText("Mixed")
+
+        self.bw_btn.clicked.connect(lambda: set_chosen_training(self.bw_btn))
+        self.cardio_btn.clicked.connect(lambda: set_chosen_training(self.cardio_btn))
+        self.wl_btn.clicked.connect(lambda: set_chosen_training(self.wl_btn))
+        self.mixed_btn.clicked.connect(lambda: set_chosen_training(self.mixed_btn))
+
 
 class Profile(QMainWindow):
     def __init__(self):
@@ -82,8 +114,6 @@ widget.addWidget(main_window)
 widget.addWidget(browse_window)
 widget.addWidget(create_training_window)
 widget.addWidget(profile_window)
-
-
 
 
 widget.setFixedHeight(600)

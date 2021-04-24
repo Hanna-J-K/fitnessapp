@@ -8,7 +8,7 @@ class Training(ABC):
         super().__init__()
 
     @abstractmethod
-    def addExercise(self):
+    def add_exercise(self):
         pass
 
     @abstractmethod

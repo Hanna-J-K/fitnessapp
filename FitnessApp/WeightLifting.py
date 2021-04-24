@@ -8,7 +8,7 @@ class WeightLifting(Training):
         self.reps = reps
         self.sets = sets
 
-    def addExercise(self):
+    def add_exercise(self):
         pass
 
     def removeExercise(self):
