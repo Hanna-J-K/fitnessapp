@@ -166,8 +166,9 @@ class NewCalisthenicsTraining(QMainWindow):
             self.exercise.print_information()
 
         def remove_exercise_from_training():
-            print(self.training_list.currentItem())
-            self.training_list.takeItem(self.training_list.currentItem())
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
 
         def create_training():
             self.training_title = self.training_name_btn.toPlainText()
@@ -204,8 +205,9 @@ class NewFreeWeightTraining(QMainWindow):
             self.exercise.print_information()
 
         def remove_exercise_from_training():
-            print(self.training_list.currentItem())
-            self.training_list.takeItem(self.training_list.currentItem())
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
 
         def create_training():
             self.training_title = self.training_name_btn.toPlainText()
@@ -242,8 +244,9 @@ class NewMachinesTraining(QMainWindow):
             self.exercise.print_information()
 
         def remove_exercise_from_training():
-            print(self.training_list.currentItem())
-            self.training_list.takeItem(self.training_list.currentItem())
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
 
         def create_training():
             self.training_title = self.training_name_btn.toPlainText()
