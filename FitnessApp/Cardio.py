@@ -11,8 +11,8 @@ class Cardio(Training):
     def add_exercise(self):
         pass
 
-    def removeExercise(self):
+    def remove_exercise(self):
         pass
 
-    def createExercise(self):
+    def create_exercise(self):
         pass

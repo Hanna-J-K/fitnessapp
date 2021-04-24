@@ -12,10 +12,10 @@ class Training(ABC):
         pass
 
     @abstractmethod
-    def removeExercise(self):
+    def remove_exercise(self):
         pass
 
     @abstractmethod
-    def createExercise(self):
+    def create_exercise(self):
         pass
 
