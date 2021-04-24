@@ -13,6 +13,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
 
 from FitnessApp.Calisthenics import Calisthenics
+from FitnessApp.ExerciseRepetitive import ExerciseRepetitive
 
 from FitnessApp.Exercise import Exercise
 
@@ -146,23 +147,32 @@ class NewCalisthenicsTraining(QMainWindow):
 
         self.reps = 0
         self.sets = 0
-        self.name = "eh2"
+        self.exercise_name = "eh2"
 
-        def sets_and_reps():
+        def add_exercise_to_training():
             self.reps = self.rep_spin.value()
             print(self.reps)
             self.sets = self.set_spin.value()
             print(self.sets)
+            self.exercise_name = self.exercise_combo.currentText()
+            self.exercise = ExerciseRepetitive(self.exercise_name, "bw", self.sets, self.reps, 0, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise.print_information()
+
             # self.name = self.training_name.text()
             # print(self.name)
+
+        def remove_exercise_from_training():
+            self.training_list.takeItem(self.training_list.currentItem())
 
         def create_training():
             self.training = Calisthenics(self.reps, self.sets, self.name)
             self.training.print_reps_and_sets()
 
-        self.add_btn.clicked.connect(sets_and_reps)
+        self.add_btn.clicked.connect(add_exercise_to_training)
 
-        self.create_training_btn.clicked.connect(lambda: create_training())
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_btn.clicked.connect(remove_exercise_from_training)
 
 
 class NewFreeWeightTraining(QMainWindow):
