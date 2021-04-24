@@ -150,14 +150,19 @@ class NewCalisthenicsTraining(QMainWindow):
 
         def sets_and_reps():
             self.reps = self.rep_spin.value()
+            print(self.reps)
             self.sets = self.set_spin.value()
-            self.name = self.training_name.text()
+            print(self.sets)
+            # self.name = self.training_name.text()
+            # print(self.name)
+
+        def create_training():
+            self.training = Calisthenics(self.reps, self.sets, self.name)
+            self.training.print_reps_and_sets()
 
         self.add_btn.clicked.connect(sets_and_reps)
 
-        self.training = Calisthenics(self.reps, self.sets, self.name)
-        #
-        self.create_training_btn.clicked.connect(lambda: print(self.reps))
+        self.create_training_btn.clicked.connect(lambda: create_training())
 
 
 class NewFreeWeightTraining(QMainWindow):
