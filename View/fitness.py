@@ -159,8 +159,6 @@ class NewCalisthenicsTraining(QMainWindow):
             self.training_list.addItem(self.exercise.name)
             self.exercise.print_information()
 
-            # self.name = self.training_name.text()
-            # print(self.name)
 
         def remove_exercise_from_training():
             self.training_list.takeItem(self.training_list.currentItem())
@@ -169,7 +167,7 @@ class NewCalisthenicsTraining(QMainWindow):
             self.training = Calisthenics(self.reps, self.sets, self.name)
             self.training.print_reps_and_sets()
 
-        self.add_btn.clicked.connect(add_exercise_to_training)
+        self.add_btn.clicked.connect(add_exercise_to_training)##
 
         self.create_training_btn.clicked.connect(create_training)
         self.remove_btn.clicked.connect(remove_exercise_from_training)
