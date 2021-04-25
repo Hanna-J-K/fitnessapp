@@ -599,14 +599,17 @@ class EditTrainingWindow(QMainWindow):
                         self.exercise_type = "bw"
                         self.reps = self.rep_spin.value()
                         self.sets = self.set_spin.value()
+                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps, 0)
                     elif self.new_ex_combo.currentText() == "FREE WEIGHTS":
                         self.exercise_type = "fw"
                         self.reps = self.rep_spin.value()
                         self.sets = self.set_spin.value()
+                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps)
                     elif self.new_ex_combo.currentText() == "HIIT":
                         self.exercise_type = "hiit"
                         self.sets = self.set_spin.value()
                         self.time = self.secs_spin.value()
+                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.time, 0)
                     elif self.new_ex_combo.currentText() == "JOGGING":
                         self.exercise_type = "cardio"
                         if self.by_dist_btn.isChecked():

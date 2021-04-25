@@ -16,3 +16,7 @@ class Training(ABC):
     def add_exercise(self, exercise):
         pass
 
+    @abstractmethod
+    def create_exercise(self):
+        pass
+
