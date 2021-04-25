@@ -125,14 +125,16 @@ class BrowseTrainingsWindow(QMainWindow):
                 print(exer.name)
                 self.exercises_panel.addItem(exer.name)
 
-        def remove_training():
+        def delete_training():
             index = self.training_list_collection.currentRow()
-            del self.exercise_list[index]
-            self.training_list.takeItem(index)
+            del users_trainings[index]
+            self.exercises_panel.clear()
+            self.training_list_collection.takeItem(index)
 
         self.refresh_btn.clicked.connect(show_trainings)
 
         self.show_exercise_btn.clicked.connect(show_trainings_exercise)
+        self.delete_training_btn.clicked.connect(delete_training)
 
 
 class CreateNewTraining(QMainWindow):
