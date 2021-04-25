@@ -227,7 +227,6 @@ class NewFreeWeightTraining(QMainWindow):
             self.exercise = ExerciseRepetitive(self.exercise_name, "fw", self.sets, self.reps, 0, 0)
             self.training_list.addItem(self.exercise.name)
             self.exercise_list.append(self.exercise)
-            self.exercise.print_information()
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -235,7 +234,7 @@ class NewFreeWeightTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = FreeWeight(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
@@ -269,7 +268,6 @@ class NewMachinesTraining(QMainWindow):
             self.exercise = ExerciseRepetitive(self.exercise_name, "mach", self.sets, self.reps, 0, 0)
             self.training_list.addItem(self.exercise.name)
             self.exercise_list.append(self.exercise)
-            self.exercise.print_information()
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -277,7 +275,7 @@ class NewMachinesTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = Machines(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
@@ -323,7 +321,7 @@ class NewJoggingTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = Jogging(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
@@ -366,7 +364,7 @@ class NewHiitTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = Hiit(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
@@ -407,7 +405,7 @@ class NewYogaTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = Yoga(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
