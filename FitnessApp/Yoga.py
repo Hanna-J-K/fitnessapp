@@ -1,4 +1,4 @@
-from BodyWeight import BodyWeight
+from FitnessApp.BodyWeight import BodyWeight
 
 
 class Yoga(BodyWeight):
