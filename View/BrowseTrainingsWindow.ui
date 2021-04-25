@@ -145,7 +145,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QListWidget" name="training_list_collection">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>120</x>
       <y>90</y>
       <width>291</width>
       <height>361</height>
@@ -155,10 +155,10 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="show_exercise_btn">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>110</y>
-      <width>81</width>
-      <height>51</height>
+      <x>540</x>
+      <y>20</y>
+      <width>131</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">
@@ -169,15 +169,15 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>SHOW</string>
+     <string>SHOW EXERCISES</string>
     </property>
    </widget>
    <widget class="QListWidget" name="exercises_panel">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>450</x>
       <y>90</y>
-      <width>231</width>
+      <width>221</width>
       <height>361</height>
      </rect>
     </property>

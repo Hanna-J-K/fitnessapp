@@ -21,10 +21,10 @@ color: #FB98AD;</string>
    <widget class="QPushButton" name="choose_type_btn">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>160</x>
       <y>30</y>
-      <width>591</width>
-      <height>45</height>
+      <width>461</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -38,50 +38,10 @@ font: 20pt &quot;PRIMETIME&quot;;</string>
      <string>NEW FREE WEIGHT TRAINING</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="training_list">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>280</y>
-      <width>291</width>
-      <height>241</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="bw_btn">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>120</y>
-      <width>81</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-background-color: #FB98AD;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>View/resources/023-muscle.svg</normaloff>View/resources/023-muscle.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>60</width>
-      <height>60</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QComboBox" name="exercise_combo">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>170</x>
       <y>120</y>
       <width>171</width>
       <height>81</height>
@@ -118,7 +78,7 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
    <widget class="QPushButton" name="add_btn">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>520</x>
       <y>130</y>
       <width>111</width>
       <height>61</height>
@@ -147,7 +107,7 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
    <widget class="QSpinBox" name="set_spin">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>370</x>
       <y>120</y>
       <width>61</width>
       <height>31</height>
@@ -162,7 +122,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QSpinBox" name="rep_spin">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>370</x>
       <y>170</y>
       <width>61</width>
       <height>31</height>
@@ -177,7 +137,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QPushButton" name="sets_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>450</x>
       <y>120</y>
       <width>41</width>
       <height>31</height>
@@ -199,7 +159,7 @@ text-align: left;
    <widget class="QPushButton" name="reps_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>450</x>
       <y>170</y>
       <width>41</width>
       <height>31</height>
@@ -218,23 +178,14 @@ text-align: left;
      <string>reps</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="create_training_btn">
+   <widget class="QPushButton" name="back_btn">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>250</y>
-      <width>161</width>
-      <height>71</height>
+      <x>20</x>
+      <y>20</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>PRIMETIME</family>
-      <pointsize>8</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -244,14 +195,14 @@ text-align: left;
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string> CREATE TRAINING</string>
+     <string>BACK</string>
     </property>
    </widget>
    <widget class="QPushButton" name="remove_training_btn">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>350</y>
+      <x>480</x>
+      <y>340</y>
       <width>161</width>
       <height>71</height>
      </rect>
@@ -279,46 +230,34 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPlainTextEdit" name="training_name">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>250</y>
+      <x>160</x>
+      <y>240</y>
       <width>291</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 10px solid #FB98AD;
-font: 12pt &quot;MS Shell Dlg 2&quot;;
-</string>
+     <string notr="true">font: 12pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="plainText">
      <string>Training name</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="back_btn">
+   <widget class="QListWidget" name="training_list">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>81</width>
-      <height>41</height>
+      <x>160</x>
+      <y>280</y>
+      <width>291</width>
+      <height>241</height>
      </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
-    </property>
-    <property name="text">
-     <string>BACK</string>
     </property>
    </widget>
    <widget class="QPushButton" name="browse_btn">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>450</y>
+      <x>480</x>
+      <y>440</y>
       <width>161</width>
       <height>71</height>
      </rect>
@@ -332,6 +271,35 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BROWSE TRAININGS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="create_training_btn">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>240</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>PRIMETIME</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string> CREATE TRAINING</string>
     </property>
    </widget>
   </widget>

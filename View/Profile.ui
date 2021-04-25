@@ -63,7 +63,7 @@ font: 20pt &quot;PRIMETIME&quot;; </string>
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>500</y>
+      <y>490</y>
       <width>161</width>
       <height>71</height>
      </rect>
@@ -187,8 +187,8 @@ font: 8pt &quot;PRIMETIME&quot;;
    <widget class="QPushButton" name="save_btn">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>500</y>
+      <x>470</x>
+      <y>490</y>
       <width>161</width>
       <height>71</height>
      </rect>
