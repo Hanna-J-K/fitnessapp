@@ -188,6 +188,11 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
     </item>
     <item>
      <property name="text">
+      <string>MIXED</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>YOGA</string>
      </property>
     </item>
@@ -459,7 +464,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 border: none;</string>
     </property>
     <property name="text">
-     <string> FILL IN APPROPRIATE INFO ONLY</string>
+     <string>    FILL IN APPROPRIATE INFO ONLY</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">

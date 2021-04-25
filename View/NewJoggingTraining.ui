@@ -41,16 +41,16 @@ font: 20pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="add_btn">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>130</y>
+      <x>550</x>
+      <y>120</y>
       <width>111</width>
-      <height>61</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>PRIMETIME</family>
-      <pointsize>12</pointsize>
+      <pointsize>8</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -61,7 +61,7 @@ font: 20pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 12pt &quot;PRIMETIME&quot;;</string>
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>ADD</string>
@@ -102,7 +102,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
      <rect>
       <x>510</x>
       <y>120</y>
-      <width>41</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -124,7 +124,7 @@ text-align: left;
      <rect>
       <x>510</x>
       <y>170</y>
-      <width>41</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -146,12 +146,13 @@ text-align: left;
      <rect>
       <x>300</x>
       <y>120</y>
-      <width>111</width>
+      <width>121</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 3px solid #FB98AD;</string>
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BY TIME</string>
@@ -162,12 +163,13 @@ text-align: left;
      <rect>
       <x>300</x>
       <y>160</y>
-      <width>111</width>
+      <width>121</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 3px solid #FB98AD;</string>
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BY DISTANCE</string>
@@ -176,18 +178,18 @@ text-align: left;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>140</x>
       <y>120</y>
-      <width>191</width>
+      <width>161</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 3px solid #FB98AD;
-font: 12pt &quot;PRIMETIME&quot;;</string>
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>I WANT TO JOG</string>
+     <string>      I WANT TO JOG</string>
     </property>
    </widget>
    <widget class="QPushButton" name="back_btn">
@@ -213,7 +215,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="remove_training_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>480</x>
       <y>340</y>
       <width>161</width>
       <height>71</height>
@@ -242,7 +244,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPlainTextEdit" name="training_name">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>160</x>
       <y>240</y>
       <width>291</width>
       <height>51</height>
@@ -258,7 +260,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QListWidget" name="training_list">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>160</x>
       <y>280</y>
       <width>291</width>
       <height>241</height>
@@ -271,7 +273,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="browse_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>480</x>
       <y>440</y>
       <width>161</width>
       <height>71</height>
@@ -291,7 +293,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="create_training_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>480</x>
       <y>240</y>
       <width>161</width>
       <height>71</height>
