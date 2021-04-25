@@ -43,7 +43,11 @@ def go_to_profile():
     widget.setCurrentIndex(3)  # open profile
 
 
-def go_to_new_training(training):
+def go_to_edit():
+    widget.setCurrentIndex(10)  # open editing training
+
+
+def go_to_new_training(training):     # specific windows for all types of training
     if training == "   CALISTHENICS":
         widget.setCurrentIndex(4)
     elif training == "   FREE WEIGHTS":
@@ -58,15 +62,10 @@ def go_to_new_training(training):
         widget.setCurrentIndex(9)
     else:
         widget.setCurrentIndex(0)
-        print(training)
-        print("LALALALLA")
+        print("You didn't select training. Try again! :)")
 
 
-# def print_json():
-#     clst.Calisthenics(20, 5)
-#     clst.Calisthenics.encode_calisthenics(clst.Calisthenics)
-#     calisthenics1_json = json.dumps(calisthenics1)
-#     print(calisthenics1_json)
+# global variables storing information needed to be shared and accessed between all windows
 users_trainings = []
 
 
@@ -75,58 +74,50 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         loadUi("MainMenu.ui", self)
-        print(sys.path)
+
+        print("You are in main menu")
+
+        # ----------- GUI CONTROLS ----------- #
+
+        # navigation from main window to other windows
         self.browse_btn.clicked.connect(go_to_browse)
         self.create_btn.clicked.connect(go_to_create_training)
         self.profile_btn.clicked.connect(go_to_profile)
-        # self.create_btn.clicked.connect(print_json())
 
 
 class BrowseTrainingsWindow(QMainWindow):
     def __init__(self):
         super(BrowseTrainingsWindow, self).__init__()
         loadUi("BrowseTrainingsWindow.ui", self)
-        self.main_menu_btn.clicked.connect(go_to_main)
-        self.new_training_btn.clicked.connect(go_to_create_training)
-        print("hania")
-        print(users_trainings)
+
+        print("You are browsing your trainings")
+
         self.all_trainings = []
         self.all_exercises = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # display all user's trainings when the 'refresh' button is pressed
         def show_trainings():
-            index = 0
             self.all_trainings.clear()
-            self.training_list_collection.clear()
-            # for training in users_trainings:
-            #     self.all_trainings = training.name
-            # for kurwa in self.all_trainings:
-            #     print(kurwa)
+            self.training_list_collection.clear()  # clear display so as not to duplicate trainings
             for training in users_trainings:
-                print("HALO")
-
                 self.all_trainings.append(training.name)
-                print(self.all_trainings[index])
                 self.training_list_collection.addItem(training.name)
-                index += 1
 
+        # display all selected training's exercises when the 'show' button is pressed
         def show_trainings_exercise():
-            self.exercise_index = self.training_list_collection.currentRow()
-            print(self.exercise_index)
+            self.exercise_index = self.training_list_collection.currentRow()  # if no training selected, crashes!
             self.exercise = self.training_list_collection.currentItem().text()
-            print(self.exercise)
             self.training = users_trainings[self.exercise_index]
-            print("oooooooooooooo")
-            print(self.training.exercise_list[0].name)
-            self.all_exercises = copy.deepcopy(self.training.exercise_list)
-            print("deep copy hehehe")
-            print(self.all_exercises[0].name)
-            self.exercises_panel.clear()
+            self.all_exercises = copy.deepcopy(self.training.exercise_list)  # deep copying exercises for easier access
+            self.exercises_panel.clear()  # clear the display so as not to duplicate exercises
             for exer in self.all_exercises:
                 print(exer.exercise_type)
                 print(exer.sets)
                 print(exer.reps)
+                # what information is displayed depends on the type of exercise, hence the elif instructions
                 if exer.exercise_type == "bw" or exer.exercise_type == "fw" or exer.exercise_type == "mach":
-                    print("lalalallalaaaa")
                     self.exercises_panel.addItem(exer.name + "   " +
                                                  str(exer.sets) + "x" + str(exer.reps))
                 elif exer.exercise_type == "cardio":
@@ -140,15 +131,21 @@ class BrowseTrainingsWindow(QMainWindow):
                 elif exer.exercise_type == "yoga":
                     self.exercises_panel.addItem(exer.name + "   " +
                                                  str(exer.time) + "min")
-
+        # delete user's training
         def delete_training():
             index = self.training_list_collection.currentRow()
             del users_trainings[index]
             self.exercises_panel.clear()
             self.training_list_collection.takeItem(index)
 
-        self.refresh_btn.clicked.connect(show_trainings)
+        # ----------- GUI CONTROLS ----------- #
 
+        # navigation via buttons to other windows
+        self.main_menu_btn.clicked.connect(go_to_main)
+        self.new_training_btn.clicked.connect(go_to_create_training)
+
+        # controls for functionalities and features
+        self.refresh_btn.clicked.connect(show_trainings)
         self.show_exercise_btn.clicked.connect(show_trainings_exercise)
         self.delete_training_btn.clicked.connect(delete_training)
 
@@ -157,10 +154,12 @@ class CreateNewTraining(QMainWindow):
     def __init__(self):
         super(CreateNewTraining, self).__init__()
         loadUi("CreateNewTraining.ui", self)
-        self.main_menu_btn.clicked.connect(go_to_main)
 
-        self.what_training = "eh"
+        self.what_training = "NO TRAINING SELECTED"
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # pick training to create from combo boxes (remember to press the icon)
         def set_chosen_training(btn):
             if btn == self.bw_btn:
                 if self.bw_combo.currentIndex() != 0:
@@ -195,18 +194,26 @@ class CreateNewTraining(QMainWindow):
                 self.what_training = self.mixed_combo.currentText()
                 print(self.what_training)
 
+        # ----------- GUI CONTROLS ----------- #
+
+        # controls for functionalities and features
         self.bw_btn.clicked.connect(lambda: set_chosen_training(self.bw_btn))
         self.cardio_btn.clicked.connect(lambda: set_chosen_training(self.cardio_btn))
         self.wl_btn.clicked.connect(lambda: set_chosen_training(self.wl_btn))
         self.mixed_btn.clicked.connect(lambda: set_chosen_training(self.mixed_btn))
-
         self.next_btn.clicked.connect(lambda: go_to_new_training(self.what_training))
+
+        # navigation via buttons to other windows
+        self.main_menu_btn.clicked.connect(go_to_main)
 
 
 class Profile(QMainWindow):
     def __init__(self):
         super(Profile, self).__init__()
         loadUi("Profile.ui", self)
+
+        # ----------- GUI CONTROLS ----------- #
+
         self.main_menu_btn.clicked.connect(go_to_main)
 
 
@@ -215,18 +222,20 @@ class NewCalisthenicsTraining(QMainWindow):
         super(NewCalisthenicsTraining, self).__init__()
         loadUi("NewCalisthenicsTraining.ui", self)
 
+        print("You are creating new calisthenics training!")
+
         self.reps = 0
         self.sets = 0
-        self.training_title = "ggg"
-        self.exercise_name = "eh2"
-
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.reps = self.rep_spin.value()
-            print(self.reps)
             self.sets = self.set_spin.value()
-            print(self.sets)
             if self.exercise_combo.currentIndex() != 0:
                 self.exercise_name = self.exercise_combo.currentText()
                 self.exercise = ExerciseRepetitive(self.exercise_name, "bw", self.sets, self.reps, 0, 0)
@@ -236,22 +245,26 @@ class NewCalisthenicsTraining(QMainWindow):
             else:
                 self.exercise_name = "EMPTY EXERCISE"
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = Calisthenics(self.training_title, self.exercise_list)
-            print(self.training.name)
             users_trainings.append(self.training)
 
-        self.add_btn.clicked.connect(add_exercise_to_training)
+        # ----------- GUI CONTROLS ----------- #
 
+        # controls for functionalities and features
+        self.add_btn.clicked.connect(add_exercise_to_training)
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
 
@@ -261,13 +274,17 @@ class NewFreeWeightTraining(QMainWindow):
         super(NewFreeWeightTraining, self).__init__()
         loadUi("NewFreeWeightTraining.ui", self)
 
+        print("You are creating new free weight training!")
+
         self.reps = 0
         self.sets = 0
-        self.training_title = "eh23"
-        self.exercise_name = "eh2"
-
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.reps = self.rep_spin.value()
             print(self.reps)
@@ -282,22 +299,27 @@ class NewFreeWeightTraining(QMainWindow):
             else:
                 self.exercise_name = "EMPTY EXERCISE"
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = FreeWeight(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
 
-        self.add_btn.clicked.connect(add_exercise_to_training)
+        # ----------- GUI CONTROLS ----------- #
 
+        # controls for functionalities and features
+        self.add_btn.clicked.connect(add_exercise_to_training)
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
 
@@ -307,13 +329,18 @@ class NewMachinesTraining(QMainWindow):
         super(NewMachinesTraining, self).__init__()
         loadUi("NewMachinesTraining.ui", self)
 
+        print("You are creating new machines training!")
+
         self.reps = 0
         self.sets = 0
-        self.training_title = "hh23"
-        self.exercise_name = "eh2"
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
 
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.reps = self.rep_spin.value()
             print(self.reps)
@@ -328,23 +355,27 @@ class NewMachinesTraining(QMainWindow):
             else:
                 self.exercise_name = "EMPTY EXERCISE"
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = Machines(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
-            # go_to_browse()
 
+        # ----------- GUI CONTROLS ----------- #
+
+        # controls for functionalities and features
         self.add_btn.clicked.connect(add_exercise_to_training)
-
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
 
@@ -353,15 +384,18 @@ class NewJoggingTraining(QMainWindow):
     def __init__(self):
         super(NewJoggingTraining, self).__init__()
         loadUi("NewJoggingTraining.ui", self)
-        self.back_btn.clicked.connect(go_to_create_training)
+
+        print("You are creating new free weight training!")
 
         self.time = 0
         self.distance = 0
-        self.training_title = "hh23"
-        self.exercise_name = "eh2"
-
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.time = self.min_spin.value()
             print(self.time)
@@ -376,39 +410,47 @@ class NewJoggingTraining(QMainWindow):
                 self.training_list.addItem(self.exercise.name + "   " + str(self.exercise.time) + "min")
             self.exercise_list.append(self.exercise)
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = Jogging(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
-            # go_to_browse()
 
+        # ----------- GUI CONTROLS ----------- #
+
+        # controls for functionalities and features
         self.add_btn.clicked.connect(add_exercise_to_training)
-
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
+
 
 class NewHiitTraining(QMainWindow):
     def __init__(self):
         super(NewHiitTraining, self).__init__()
         loadUi("NewHiitTraining.ui", self)
-        self.back_btn.clicked.connect(go_to_create_training)
+
+        print("You are creating new HIIT training!")
 
         self.time = 0
         self.sets = 0
-        self.training_title = "hh23"
-        self.exercise_name = "eh2"
-
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.time = self.secs_spin.value()
             print(self.time)
@@ -423,11 +465,13 @@ class NewHiitTraining(QMainWindow):
             else:
                 self.exercise_name = "EMPTY EXERCISE"
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = Hiit(self.training_title, self.exercise_list)
@@ -435,11 +479,14 @@ class NewHiitTraining(QMainWindow):
             users_trainings.append(self.training)
             # go_to_browse()
 
-        self.add_btn.clicked.connect(add_exercise_to_training)
+        # ----------- GUI CONTROLS ----------- #
 
+        # controls for functionalities and features
+        self.add_btn.clicked.connect(add_exercise_to_training)
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
 
@@ -448,14 +495,17 @@ class NewYogaTraining(QMainWindow):
     def __init__(self):
         super(NewYogaTraining, self).__init__()
         loadUi("NewYogaTraining.ui", self)
-        self.back_btn.clicked.connect(go_to_create_training)
+
+        print("You are creating new yoga training!")
 
         self.time = 0
-        self.training_title = "hh23"
-        self.exercise_name = "eh2"
-
+        self.training_title = "NEW TRAINING"
+        self.exercise_name = "NEW EXERCISE"
         self.exercise_list = []
 
+        # ----------- GUI CLASS METHODS ----------- #
+
+        # add and display exercises
         def add_exercise_to_training():
             self.time = self.min_spin.value()
             print(self.time)
@@ -466,25 +516,35 @@ class NewYogaTraining(QMainWindow):
                                        str(self.exercise.time) + "min")
             self.exercise_list.append(self.exercise)
 
+        # remove previously added exercise
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
             del self.exercise_list[index]
             self.training_list.takeItem(index)
 
+        # create and save prepared training
         def create_training():
             self.training_title = self.training_name.toPlainText()
             self.training = Yoga(self.training_title, self.exercise_list)
             print(self.training.name)
             users_trainings.append(self.training)
-            # go_to_browse()
 
+        # ----------- GUI CONTROLS ----------- #
+
+        # controls for functionalities and features
         self.add_btn.clicked.connect(add_exercise_to_training)
-
         self.create_training_btn.clicked.connect(create_training)
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
+        # navigation via buttons to other windows
         self.back_btn.clicked.connect(go_to_create_training)
         self.browse_btn.clicked.connect(go_to_browse)
+
+
+class EditTrainingWindow(QMainWindow):
+    def __init__(self):
+        super(EditTrainingWindow, self).__init__()
+        loadUi("NewYogaTraining.ui", self)
 
 
 # main
@@ -501,6 +561,7 @@ new_machines_window = NewMachinesTraining()
 new_jogging_window = NewJoggingTraining()
 new_hiit_window = NewHiitTraining()
 new_yoga_window = NewYogaTraining()
+edit_training_window = EditTrainingWindow()
 
 # add to list of widgets to switch between windows
 widget.addWidget(main_window)
@@ -513,6 +574,7 @@ widget.addWidget(new_machines_window)
 widget.addWidget(new_jogging_window)
 widget.addWidget(new_hiit_window)
 widget.addWidget(new_yoga_window)
+widget.addWidget(edit_training_window)
 
 widget.setFixedHeight(600)
 widget.setFixedWidth(800)
