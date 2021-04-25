@@ -122,8 +122,24 @@ class BrowseTrainingsWindow(QMainWindow):
             print(self.all_exercises[0].name)
             self.exercises_panel.clear()
             for exer in self.all_exercises:
-                print(exer.name)
-                self.exercises_panel.addItem(exer.name)
+                print(exer.exercise_type)
+                print(exer.sets)
+                print(exer.reps)
+                if exer.exercise_type == "bw" or exer.exercise_type == "fw" or exer.exercise_type == "mach":
+                    print("lalalallalaaaa")
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.sets) + "x" + str(exer.reps))
+                elif exer.exercise_type == "cardio":
+                    if exer.time == 0:
+                        self.exercises_panel.addItem(exer.name + "   " + str(exer.distance) + "km")
+                    else:
+                        self.exercises_panel.addItem(exer.name + "   " + str(exer.time) + "min")
+                elif exer.exercise_type == "hiit":
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.sets) + "x" + str(exer.time) + "s")
+                elif exer.exercise_type == "yoga":
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.time) + "min")
 
         def delete_training():
             index = self.training_list_collection.currentRow()
@@ -211,11 +227,14 @@ class NewCalisthenicsTraining(QMainWindow):
             print(self.reps)
             self.sets = self.set_spin.value()
             print(self.sets)
-            self.exercise_name = self.exercise_combo.currentText()
-            self.exercise = ExerciseRepetitive(self.exercise_name, "bw", self.sets, self.reps, 0, 0)
-            self.training_list.addItem(self.exercise.name)
-            self.exercise_list.append(self.exercise)
-            self.exercise.print_information()
+            if self.exercise_combo.currentIndex() != 0:
+                self.exercise_name = self.exercise_combo.currentText()
+                self.exercise = ExerciseRepetitive(self.exercise_name, "bw", self.sets, self.reps, 0, 0)
+                self.training_list.addItem(self.exercise.name + "   " +
+                                           str(self.exercise.sets) + "x" + str(self.exercise.reps))
+                self.exercise_list.append(self.exercise)
+            else:
+                self.exercise_name = "EMPTY EXERCISE"
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -253,10 +272,14 @@ class NewFreeWeightTraining(QMainWindow):
             print(self.reps)
             self.sets = self.set_spin.value()
             print(self.sets)
-            self.exercise_name = self.exercise_combo.currentText()
-            self.exercise = ExerciseRepetitive(self.exercise_name, "fw", self.sets, self.reps, 0, 0)
-            self.training_list.addItem(self.exercise.name)
-            self.exercise_list.append(self.exercise)
+            if self.exercise_combo.currentIndex() != 0:
+                self.exercise_name = self.exercise_combo.currentText()
+                self.exercise = ExerciseRepetitive(self.exercise_name, "fw", self.sets, self.reps, 0, 0)
+                self.training_list.addItem(self.exercise.name + "   " +
+                                           str(self.exercise.sets) + "x" + str(self.exercise.reps))
+                self.exercise_list.append(self.exercise)
+            else:
+                self.exercise_name = "EMPTY EXERCISE"
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -294,10 +317,14 @@ class NewMachinesTraining(QMainWindow):
             print(self.reps)
             self.sets = self.set_spin.value()
             print(self.sets)
-            self.exercise_name = self.exercise_combo.currentText()
-            self.exercise = ExerciseRepetitive(self.exercise_name, "mach", self.sets, self.reps, 0, 0)
-            self.training_list.addItem(self.exercise.name)
-            self.exercise_list.append(self.exercise)
+            if self.exercise_combo.currentIndex() != 0:
+                self.exercise_name = self.exercise_combo.currentText()
+                self.exercise = ExerciseRepetitive(self.exercise_name, "mach", self.sets, self.reps, 0, 0)
+                self.training_list.addItem(self.exercise.name + "   " +
+                                           str(self.exercise.sets) + "x" + str(self.exercise.reps))
+                self.exercise_list.append(self.exercise)
+            else:
+                self.exercise_name = "EMPTY EXERCISE"
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -340,9 +367,10 @@ class NewJoggingTraining(QMainWindow):
             self.exercise_name = "JOGGING"
             if self.by_dist_btn.isChecked():
                 self.exercise = ExerciseTimed(self.exercise_name, "cardio", 0, 0, 0, self.distance)
+                self.training_list.addItem(self.exercise.name + "   " + str(self.exercise.distance) + "km")
             else:
                 self.exercise = ExerciseTimed(self.exercise_name, "cardio", 0, 0, self.time, 0)
-            self.training_list.addItem(self.exercise.name)
+                self.training_list.addItem(self.exercise.name + "   " + str(self.exercise.time) + "min")
             self.exercise_list.append(self.exercise)
 
         def remove_exercise_from_training():
@@ -383,10 +411,14 @@ class NewHiitTraining(QMainWindow):
             print(self.time)
             self.sets = self.sets_spin.value()
             print(self.sets)
-            self.exercise_name = self.exercise_combo.currentText()
-            self.exercise = ExerciseTimed(self.exercise_name, "hiit", self.sets, 0, self.time, 0)
-            self.training_list.addItem(self.exercise.name)
-            self.exercise_list.append(self.exercise)
+            if self.exercise_combo.currentIndex() != 0:
+                self.exercise_name = self.exercise_combo.currentText()
+                self.exercise = ExerciseTimed(self.exercise_name, "hiit", self.sets, 0, self.time, 0)
+                self.training_list.addItem(self.exercise.name + "   " +
+                                           str(self.exercise.sets) + "x" + str(self.exercise.time) + "s")
+                self.exercise_list.append(self.exercise)
+            else:
+                self.exercise_name = "EMPTY EXERCISE"
 
         def remove_exercise_from_training():
             index = self.training_list.currentRow()
@@ -426,7 +458,8 @@ class NewYogaTraining(QMainWindow):
             self.exercise_name = "YOGA"
 
             self.exercise = ExerciseTimed(self.exercise_name, "yoga", 0, 0, self.time, 0)
-            self.training_list.addItem(self.exercise.name)
+            self.training_list.addItem(self.exercise.name + "   " +
+                                       str(self.exercise.time) + "min")
             self.exercise_list.append(self.exercise)
 
         def remove_exercise_from_training():

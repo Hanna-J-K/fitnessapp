@@ -1,5 +1,6 @@
 from FitnessApp.Cardio import Cardio
 
-# eh this is wrong
+
 class Jogging(Cardio):
-    pass
+    def __init__(self, name, exercise_list):
+        super().__init__(name, exercise_list)

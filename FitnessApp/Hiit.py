@@ -2,5 +2,5 @@ from FitnessApp.Cardio import Cardio
 
 
 class Hiit(Cardio):
-    def __init__(self, time, sets):
-        super().__init__(time, sets)
+    def __init__(self, name, exercise_list):
+        super().__init__(name, exercise_list)
