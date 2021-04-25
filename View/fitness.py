@@ -66,6 +66,7 @@ def go_to_new_training(training):
 #     clst.Calisthenics.encode_calisthenics(clst.Calisthenics)
 #     calisthenics1_json = json.dumps(calisthenics1)
 #     print(calisthenics1_json)
+users_trainings = []
 
 
 class MainWindow(QMainWindow):
@@ -86,6 +87,16 @@ class BrowseTrainingsWindow(QMainWindow):
         loadUi("BrowseTrainingsWindow.ui", self)
         self.main_menu_btn.clicked.connect(go_to_main)
         self.new_training_btn.clicked.connect(go_to_create_training)
+        print("hania")
+        print(users_trainings)
+
+        def show_trainings():
+            for training in users_trainings:
+                print(training.name)
+                print(users_trainings)
+                self.trainings_collection_list.addItem(training.name)
+
+        self.refresh_btn.clicked.connect(show_trainings)
 
 
 class CreateNewTraining(QMainWindow):
@@ -177,6 +188,7 @@ class NewCalisthenicsTraining(QMainWindow):
             self.training_title = self.training_name.toPlainText()
             self.training = Calisthenics(self.training_title, self.exercise_list)
             print(self.training.name)
+            users_trainings.append(self.training)
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -218,6 +230,7 @@ class NewFreeWeightTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = FreeWeight(self.training_title, self.exercise_list)
             print(self.training.name)
+            users_trainings.append(self.training)
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -259,7 +272,8 @@ class NewMachinesTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = Machines(self.training_title, self.exercise_list)
             print(self.training.name)
-            go_to_browse()
+            users_trainings.append(self.training)
+            # go_to_browse()
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -304,7 +318,8 @@ class NewJoggingTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = Jogging(self.training_title, self.exercise_list)
             print(self.training.name)
-            go_to_browse()
+            users_trainings.append(self.training)
+            # go_to_browse()
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -346,7 +361,8 @@ class NewHiitTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = Hiit(self.training_title, self.exercise_list)
             print(self.training.name)
-            go_to_browse()
+            users_trainings.append(self.training)
+            # go_to_browse()
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -386,7 +402,8 @@ class NewYogaTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = Yoga(self.training_title, self.exercise_list)
             print(self.training.name)
-            go_to_browse()
+            users_trainings.append(self.training)
+            # go_to_browse()
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 

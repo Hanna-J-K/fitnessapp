@@ -9,10 +9,10 @@ class Training(ABC):
         super().__init__()
 
     @abstractmethod
-    def remove_exercise(self):
+    def remove_exercise(self, exercise_name):
         pass
 
     @abstractmethod
-    def create_exercise(self):
+    def create_exercise(self, exercise_name):
         pass
 
