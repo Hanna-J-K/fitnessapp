@@ -47,7 +47,7 @@ def go_to_edit():
     widget.setCurrentIndex(10)  # open editing training
 
 
-def go_to_new_training(training):     # specific windows for all types of training
+def go_to_new_training(training):  # specific windows for all types of training
     if training == "   CALISTHENICS":
         widget.setCurrentIndex(4)
     elif training == "   FREE WEIGHTS":
@@ -67,6 +67,7 @@ def go_to_new_training(training):     # specific windows for all types of traini
 
 # global variables storing information needed to be shared and accessed between all windows
 users_trainings = []
+training_to_edit = 0
 
 
 class MainWindow(QMainWindow):
@@ -131,6 +132,7 @@ class BrowseTrainingsWindow(QMainWindow):
                 elif exer.exercise_type == "yoga":
                     self.exercises_panel.addItem(exer.name + "   " +
                                                  str(exer.time) + "min")
+
         # delete user's training
         def delete_training():
             index = self.training_list_collection.currentRow()
@@ -138,11 +140,22 @@ class BrowseTrainingsWindow(QMainWindow):
             self.exercises_panel.clear()
             self.training_list_collection.takeItem(index)
 
+        def pick_training_to_edit():
+            global training_to_edit
+            if self.training_list_collection.currentRow() != -1:
+                training_to_edit = self.training_list_collection.currentRow()
+            else:
+                training_to_edit = 0
+            print(training_to_edit)
+            go_to_edit()
+
         # ----------- GUI CONTROLS ----------- #
 
         # navigation via buttons to other windows
         self.main_menu_btn.clicked.connect(go_to_main)
         self.new_training_btn.clicked.connect(go_to_create_training)
+        self.edit_training_btn.clicked.connect(pick_training_to_edit)
+        # self.edit_training_btn_clicked.connect(go_to_edit)
 
         # controls for functionalities and features
         self.refresh_btn.clicked.connect(show_trainings)
@@ -544,7 +557,34 @@ class NewYogaTraining(QMainWindow):
 class EditTrainingWindow(QMainWindow):
     def __init__(self):
         super(EditTrainingWindow, self).__init__()
-        loadUi("NewYogaTraining.ui", self)
+        loadUi("EditTrainingWindow.ui", self)
+
+        # ----------- GUI CLASS METHODS ----------- #
+        def display_exercises():
+            self.training = users_trainings[training_to_edit]
+            self.all_exercises = copy.deepcopy(self.training.exercise_list)
+
+            for exer in self.all_exercises:
+                print(exer.exercise_type)
+                print(exer.sets)
+                print(exer.reps)
+                # what information is displayed depends on the type of exercise, hence the elif instructions
+                if exer.exercise_type == "bw" or exer.exercise_type == "fw" or exer.exercise_type == "mach":
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.sets) + "x" + str(exer.reps))
+                elif exer.exercise_type == "cardio":
+                    if exer.time == 0:
+                        self.exercises_panel.addItem(exer.name + "   " + str(exer.distance) + "km")
+                    else:
+                        self.exercises_panel.addItem(exer.name + "   " + str(exer.time) + "min")
+                elif exer.exercise_type == "hiit":
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.sets) + "x" + str(exer.time) + "s")
+                elif exer.exercise_type == "yoga":
+                    self.exercises_panel.addItem(exer.name + "   " +
+                                                 str(exer.time) + "min")
+
+            def create_and_add_exercise():
 
 
 # main

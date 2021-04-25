@@ -69,7 +69,7 @@ border: none;</string>
      <string notr="true">font: 10pt;</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
+   <widget class="QPlainTextEdit" name="training_title">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -184,11 +184,6 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
     <item>
      <property name="text">
       <string>MACHINES</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>MIXED</string>
      </property>
     </item>
     <item>
@@ -464,7 +459,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 border: none;</string>
     </property>
     <property name="text">
-     <string>    FILL IN APPROPRIATE INFO ONLY</string>
+     <string> FILL IN APPROPRIATE INFO ONLY</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -484,7 +479,7 @@ border: none;</string>
    <zorder>back_btn</zorder>
    <zorder>ur_train_lbl</zorder>
    <zorder>exercises_panel</zorder>
-   <zorder>plainTextEdit</zorder>
+   <zorder>training_title</zorder>
    <zorder>add_exercise_btn</zorder>
    <zorder>remove_exercise_btn</zorder>
    <zorder>bw_combo</zorder>
