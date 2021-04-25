@@ -122,19 +122,6 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string>BACK</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>90</y>
-      <width>231</width>
-      <height>361</height>
-     </rect>
-    </property>
-    <property name="textInteractionFlags">
-     <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
-    </property>
-   </widget>
    <widget class="QPushButton" name="refresh_btn">
     <property name="geometry">
      <rect>
@@ -158,9 +145,39 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QListWidget" name="training_list_collection">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>70</x>
       <y>90</y>
       <width>291</width>
+      <height>361</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="show_exercise_btn">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>110</y>
+      <width>81</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>SHOW</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="exercises_panel">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>90</y>
+      <width>231</width>
       <height>361</height>
      </rect>
     </property>

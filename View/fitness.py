@@ -5,6 +5,7 @@
 # #F8567B - i love pink
 
 import sys
+import copy
 
 # sys.path.insert(0, "C:\\Users\\hanka\\PycharmProjects\\fitnessapp\\FitnessApp")
 
@@ -90,6 +91,7 @@ class BrowseTrainingsWindow(QMainWindow):
         print("hania")
         print(users_trainings)
         self.all_trainings = []
+        self.all_exercises = []
 
         def show_trainings():
             index = 0
@@ -104,10 +106,28 @@ class BrowseTrainingsWindow(QMainWindow):
 
                 self.all_trainings.append(training.name)
                 print(self.all_trainings[index])
-                self.training_list_collection.addItem(self.all_trainings[index])
+                self.training_list_collection.addItem(training.name)
                 index += 1
 
+        def show_trainings_exercise():
+            self.exercise_index = self.training_list_collection.currentRow()
+            print(self.exercise_index)
+            self.exercise = self.training_list_collection.currentItem().text()
+            print(self.exercise)
+            self.training = users_trainings[self.exercise_index]
+            print("oooooooooooooo")
+            print(self.training.exercise_list[0].name)
+            self.all_exercises = copy.deepcopy(self.training.exercise_list)
+            print("deep copy hehehe")
+            print(self.all_exercises[0].name)
+            self.exercises_panel.clear()
+            for exer in self.all_exercises:
+                print(exer.name)
+                self.exercises_panel.addItem(exer.name)
+
         self.refresh_btn.clicked.connect(show_trainings)
+
+        self.show_exercise_btn.clicked.connect(show_trainings_exercise)
 
 
 class CreateNewTraining(QMainWindow):
