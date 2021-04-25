@@ -89,12 +89,20 @@ class BrowseTrainingsWindow(QMainWindow):
         self.new_training_btn.clicked.connect(go_to_create_training)
         print("hania")
         print(users_trainings)
+        self.all_trainings = []
 
         def show_trainings():
+            index = 0
+            # for training in users_trainings:
+            #     self.all_trainings = training.name
+            # for kurwa in self.all_trainings:
+            #     print(kurwa)
             for training in users_trainings:
-                print(training.name)
-                print(users_trainings)
-                self.trainings_collection_list.addItem(training.name)
+                print("HALO")
+                self.all_trainings.append(training.name)
+                print(self.all_trainings[index])
+                self.training_list_collection.addItem(self.all_trainings[index])
+                index += 1
 
         self.refresh_btn.clicked.connect(show_trainings)
 

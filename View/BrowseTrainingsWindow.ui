@@ -122,16 +122,6 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string>BACK</string>
     </property>
    </widget>
-   <widget class="QListView" name="trainings_collection_list">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>90</y>
-      <width>291</width>
-      <height>361</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
@@ -163,6 +153,16 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>REFRESH</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="training_list_collection">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>291</width>
+      <height>361</height>
+     </rect>
     </property>
    </widget>
   </widget>
