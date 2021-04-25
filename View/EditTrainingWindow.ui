@@ -143,7 +143,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <string>REMOVE EXERCISE</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="bw_combo">
+   <widget class="QComboBox" name="new_ex_combo">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -192,7 +192,7 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
      </property>
     </item>
    </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit_2">
+   <widget class="QPlainTextEdit" name="exercise_name">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -322,7 +322,7 @@ text-align: left;
      <string>secs</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="rep_spin_2">
+   <widget class="QSpinBox" name="secs_spin">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -482,15 +482,15 @@ border: none;</string>
    <zorder>training_title</zorder>
    <zorder>add_exercise_btn</zorder>
    <zorder>remove_exercise_btn</zorder>
-   <zorder>bw_combo</zorder>
-   <zorder>plainTextEdit_2</zorder>
+   <zorder>new_ex_combo</zorder>
+   <zorder>exercise_name</zorder>
    <zorder>label</zorder>
    <zorder>reps_btn</zorder>
    <zorder>rep_spin</zorder>
    <zorder>sets_btn</zorder>
    <zorder>set_spin</zorder>
    <zorder>reps_btn_2</zorder>
-   <zorder>rep_spin_2</zorder>
+   <zorder>secs_spin</zorder>
    <zorder>sets_btn_2</zorder>
    <zorder>min_spin</zorder>
    <zorder>kim_spin</zorder>
