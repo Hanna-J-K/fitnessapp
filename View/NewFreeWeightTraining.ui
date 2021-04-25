@@ -42,9 +42,9 @@ font: 20pt &quot;PRIMETIME&quot;;</string>
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>290</y>
+      <y>280</y>
       <width>291</width>
-      <height>271</height>
+      <height>241</height>
      </rect>
     </property>
    </widget>
@@ -222,15 +222,15 @@ text-align: left;
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>290</y>
-      <width>111</width>
-      <height>61</height>
+      <y>250</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>PRIMETIME</family>
-      <pointsize>12</pointsize>
+      <pointsize>8</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -241,25 +241,25 @@ text-align: left;
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 12pt &quot;PRIMETIME&quot;;</string>
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>CREATE</string>
+     <string> CREATE TRAINING</string>
     </property>
    </widget>
    <widget class="QPushButton" name="remove_training_btn">
     <property name="geometry">
      <rect>
       <x>520</x>
-      <y>380</y>
-      <width>111</width>
-      <height>61</height>
+      <y>350</y>
+      <width>161</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>PRIMETIME</family>
-      <pointsize>12</pointsize>
+      <pointsize>8</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -270,19 +270,19 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 12pt &quot;PRIMETIME&quot;;</string>
+font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>REMOVE</string>
+     <string>REMOVE EXERCISE</string>
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="training_name">
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>240</y>
+      <y>250</y>
       <width>291</width>
-      <height>61</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -299,7 +299,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>61</width>
+      <width>81</width>
       <height>41</height>
      </rect>
     </property>
@@ -312,6 +312,26 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="browse_btn">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>450</y>
+      <width>161</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
+font: 8pt &quot;PRIMETIME&quot;;</string>
+    </property>
+    <property name="text">
+     <string>BROWSE TRAININGS</string>
     </property>
    </widget>
   </widget>
