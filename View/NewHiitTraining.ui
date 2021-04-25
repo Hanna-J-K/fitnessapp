@@ -144,7 +144,7 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
      <string>ADD</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="secs_spin">
+   <widget class="QSpinBox" name="sets_spin">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -159,7 +159,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
 </string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="rep_spin">
+   <widget class="QSpinBox" name="secs_spin">
     <property name="geometry">
      <rect>
       <x>430</x>

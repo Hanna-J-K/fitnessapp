@@ -247,19 +247,6 @@ font: 12pt &quot;PRIMETIME&quot;;</string>
      <string>CREATE</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="tr_name_btn">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>220</y>
-      <width>231</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>TrainingName</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="remove_training_btn">
     <property name="geometry">
      <rect>

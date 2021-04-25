@@ -17,10 +17,13 @@ from FitnessApp.ExerciseRepetitive import ExerciseRepetitive
 
 from FitnessApp.Exercise import Exercise
 
-
 # in-between menus navigation
+from FitnessApp.ExerciseTimed import ExerciseTimed
 from FitnessApp.FreeWeight import FreeWeight
+from FitnessApp.Hiit import Hiit
+from FitnessApp.Jogging import Jogging
 from FitnessApp.Machines import Machines
+from FitnessApp.Yoga import Yoga
 
 
 def go_to_main():
@@ -171,7 +174,7 @@ class NewCalisthenicsTraining(QMainWindow):
             self.training_list.takeItem(index)
 
         def create_training():
-            self.training_title = self.training_name_btn.toPlainText()
+            self.training_title = self.training_name.toPlainText()
             self.training = Calisthenics(self.training_title, self.exercise_list)
             print(self.training.name)
 
@@ -256,6 +259,7 @@ class NewMachinesTraining(QMainWindow):
             self.training_title = self.training_name_btn.toPlainText()
             self.training = Machines(self.training_title, self.exercise_list)
             print(self.training.name)
+            go_to_browse()
 
         self.add_btn.clicked.connect(add_exercise_to_training)
 
@@ -271,6 +275,44 @@ class NewJoggingTraining(QMainWindow):
         loadUi("NewJoggingTraining.ui", self)
         self.back_btn.clicked.connect(go_to_create_training)
 
+        self.time = 0
+        self.distance = 0
+        self.training_title = "hh23"
+        self.exercise_name = "eh2"
+
+        self.exercise_list = []
+
+        def add_exercise_to_training():
+            self.time = self.min_spin.value()
+            print(self.time)
+            self.distance = self.kim_spin.value()
+            print(self.distance)
+            self.exercise_name = "JOGGING"
+            if self.by_dist_btn.isChecked():
+                self.exercise = ExerciseTimed(self.exercise_name, "cardio", 0, 0, 0, self.distance)
+            else:
+                self.exercise = ExerciseTimed(self.exercise_name, "cardio", 0, 0, self.time, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
+
+        def remove_exercise_from_training():
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
+
+        def create_training():
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = Jogging(self.training_title, self.exercise_list)
+            print(self.training.name)
+            go_to_browse()
+
+        self.add_btn.clicked.connect(add_exercise_to_training)
+
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
+
+        self.back_btn.clicked.connect(go_to_create_training)
+
 
 class NewHiitTraining(QMainWindow):
     def __init__(self):
@@ -278,11 +320,79 @@ class NewHiitTraining(QMainWindow):
         loadUi("NewHiitTraining.ui", self)
         self.back_btn.clicked.connect(go_to_create_training)
 
+        self.time = 0
+        self.sets = 0
+        self.training_title = "hh23"
+        self.exercise_name = "eh2"
+
+        self.exercise_list = []
+
+        def add_exercise_to_training():
+            self.time = self.secs_spin.value()
+            print(self.time)
+            self.sets = self.sets_spin.value()
+            print(self.sets)
+            self.exercise_name = self.exercise_combo.currentText()
+            self.exercise = ExerciseTimed(self.exercise_name, "hiit", self.sets, 0, self.time, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
+
+        def remove_exercise_from_training():
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
+
+        def create_training():
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = Hiit(self.training_title, self.exercise_list)
+            print(self.training.name)
+            go_to_browse()
+
+        self.add_btn.clicked.connect(add_exercise_to_training)
+
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
+
+        self.back_btn.clicked.connect(go_to_create_training)
+
 
 class NewYogaTraining(QMainWindow):
     def __init__(self):
         super(NewYogaTraining, self).__init__()
         loadUi("NewYogaTraining.ui", self)
+        self.back_btn.clicked.connect(go_to_create_training)
+
+        self.time = 0
+        self.training_title = "hh23"
+        self.exercise_name = "eh2"
+
+        self.exercise_list = []
+
+        def add_exercise_to_training():
+            self.time = self.min_spin.value()
+            print(self.time)
+            self.exercise_name = "YOGA"
+
+            self.exercise = ExerciseTimed(self.exercise_name, "yoga", 0, 0, self.time, 0)
+            self.training_list.addItem(self.exercise.name)
+            self.exercise_list.append(self.exercise)
+
+        def remove_exercise_from_training():
+            index = self.training_list.currentRow()
+            del self.exercise_list[index]
+            self.training_list.takeItem(index)
+
+        def create_training():
+            self.training_title = self.training_name_btn.toPlainText()
+            self.training = Yoga(self.training_title, self.exercise_list)
+            print(self.training.name)
+            go_to_browse()
+
+        self.add_btn.clicked.connect(add_exercise_to_training)
+
+        self.create_training_btn.clicked.connect(create_training)
+        self.remove_training_btn.clicked.connect(remove_exercise_from_training)
+
         self.back_btn.clicked.connect(go_to_create_training)
 
 
