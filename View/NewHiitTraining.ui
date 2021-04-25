@@ -156,28 +156,6 @@ text-align: left;
      <string>sets</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="reps_btn">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>170</y>
-      <width>41</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: none;
-font: 10pt &quot;PRIMETIME&quot;;
-text-align: left;
-</string>
-    </property>
-    <property name="text">
-     <string>SEC</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="back_btn">
     <property name="geometry">
      <rect>
@@ -252,6 +230,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
       <height>241</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt;</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="browse_btn">
     <property name="geometry">
@@ -300,6 +281,28 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string> CREATE TRAINING</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sets_btn_2">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>170</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;
+font: 10pt &quot;PRIMETIME&quot;;
+text-align: left;
+</string>
+    </property>
+    <property name="text">
+     <string>secs</string>
     </property>
    </widget>
   </widget>

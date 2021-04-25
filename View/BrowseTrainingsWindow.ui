@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>790</width>
+    <width>801</width>
     <height>600</height>
    </rect>
   </property>
@@ -90,7 +90,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>120</x>
       <y>20</y>
-      <width>331</width>
+      <width>261</width>
       <height>41</height>
      </rect>
     </property>
@@ -151,6 +151,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
       <height>361</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt;</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="show_exercise_btn">
     <property name="geometry">
@@ -180,6 +183,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
       <width>221</width>
       <height>361</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt;</string>
     </property>
    </widget>
   </widget>

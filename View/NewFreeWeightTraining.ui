@@ -252,6 +252,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
       <height>241</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt;</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="browse_btn">
     <property name="geometry">

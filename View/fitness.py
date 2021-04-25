@@ -253,6 +253,7 @@ class NewCalisthenicsTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
+        self.browse_btn.clicked.connect(go_to_browse)
 
 
 class NewFreeWeightTraining(QMainWindow):
@@ -298,6 +299,7 @@ class NewFreeWeightTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
+        self.browse_btn.clicked.connect(go_to_browse)
 
 
 class NewMachinesTraining(QMainWindow):
@@ -344,6 +346,7 @@ class NewMachinesTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
+        self.browse_btn.clicked.connect(go_to_browse)
 
 
 class NewJoggingTraining(QMainWindow):
@@ -391,7 +394,7 @@ class NewJoggingTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
-
+        self.browse_btn.clicked.connect(go_to_browse)
 
 class NewHiitTraining(QMainWindow):
     def __init__(self):
@@ -438,6 +441,7 @@ class NewHiitTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
+        self.browse_btn.clicked.connect(go_to_browse)
 
 
 class NewYogaTraining(QMainWindow):
@@ -480,6 +484,7 @@ class NewYogaTraining(QMainWindow):
         self.remove_training_btn.clicked.connect(remove_exercise_from_training)
 
         self.back_btn.clicked.connect(go_to_create_training)
+        self.browse_btn.clicked.connect(go_to_browse)
 
 
 # main
