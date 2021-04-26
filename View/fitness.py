@@ -630,14 +630,20 @@ class EditTrainingWindow(QMainWindow):
                     self.time = self.min_spin.value()
 
         def remove_exercise():
+            print("REmoving exercise section")
             index = self.exercises_panel.currentRow()
-            throwaway = self.exercises_panel.currentItem().text()
             self.all_exercises = copy.deepcopy(self.training.exercise_list)
+            throwaway = self.all_exercises[index].name
             print(throwaway)
             for exer in self.all_exercises:
                 if exer.name == throwaway:
                     index2 = self.all_exercises.index(exer)
+                    print("index2:")
+                    print(index2)
                     self.training.remove_exercise(index2)
+                    print("exercise at index2")
+                    print(self.training.exercise_list[index2].name)
+            print("All exercises in object")
             for name_ex in self.training.exercise_list:
                 print(name_ex.name)
             self.exercises_panel.takeItem(index)
