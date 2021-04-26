@@ -6,6 +6,8 @@
 
 import sys
 import copy
+import pickle
+import os.path
 
 # sys.path.insert(0, "C:\\Users\\hanka\\PycharmProjects\\fitnessapp\\FitnessApp")
 
@@ -83,6 +85,18 @@ class MainWindow(QMainWindow):
 
         # ----------- GUI CLASS METHODS ----------- #
         def refresh_info():
+            global users_trainings
+            global user_name
+            global users_goal
+            if os.path.isfile('user_data_trainings.pickle'):
+                pickle_in_trainings = open("user_data_trainings.pickle", "rb")
+                users_trainings = pickle.load(pickle_in_trainings)
+            if os.path.isfile('user_data_goal.pickle'):
+                pickle_in_goal = open("user_data_goal.pickle", "rb")
+                users_goal = pickle.load(pickle_in_goal)
+            if os.path.isfile('user_data_name.pickle'):
+                pickle_in_name = open("user_data_name.pickle", "rb")
+                user_name = pickle.load(pickle_in_name)
             self.label_goal.setText(users_goal)
             self.profile_btn.setText("Hi, " + user_name + "!")
 
@@ -252,6 +266,18 @@ class Profile(QMainWindow):
             self.user_weight = self.weight.toPlainText()
 
             self.submitted.emit(self.name.toPlainText(), self.goal.toPlainText())
+
+            pickle_out_trainings = open("user_data_trainings.pickle", "wb")
+            pickle.dump(users_trainings, pickle_out_trainings)
+            pickle_out_trainings.close()
+
+            pickle_out_goal = open("user_data_goal.pickle", "wb")
+            pickle.dump(users_goal, pickle_out_goal)
+            pickle_out_goal.close()
+
+            pickle_out_name = open("user_data_name.pickle", "wb")
+            pickle.dump(user_name, pickle_out_name)
+            pickle_out_name.close()
 
         # ----------- GUI CONTROLS ----------- #
 
