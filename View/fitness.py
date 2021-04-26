@@ -565,13 +565,13 @@ class EditTrainingWindow(QMainWindow):
         self.reps = 0
         self.time = 0
         self.distance = 0
-        self.training = users_trainings[training_to_edit]
+        self.training = None
 
         # ----------- GUI CLASS METHODS ----------- #
         def display_exercises():
             self.training = users_trainings[training_to_edit]
             self.all_exercises = copy.deepcopy(self.training.exercise_list)
-
+            self.exercises_panel.clear()  # clear the display so as not to duplicate exercises
             for exer in self.all_exercises:
                 print(exer.exercise_type)
                 print(exer.sets)
@@ -592,37 +592,40 @@ class EditTrainingWindow(QMainWindow):
                     self.exercises_panel.addItem(exer.name + "   " +
                                                  str(exer.time) + "min")
 
-            def create_and_add_exercise():
-                self.exercise_title = self.exercise_name.toPlainText()
-                if self.new_ex_combo.currentIndex() != 0:
-                    if self.new_ex_combo.currentText() == "CALISTHENICS":
-                        self.exercise_type = "bw"
-                        self.reps = self.rep_spin.value()
-                        self.sets = self.set_spin.value()
-                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps, 0)
-                    elif self.new_ex_combo.currentText() == "FREE WEIGHTS":
-                        self.exercise_type = "fw"
-                        self.reps = self.rep_spin.value()
-                        self.sets = self.set_spin.value()
-                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps)
-                    elif self.new_ex_combo.currentText() == "HIIT":
-                        self.exercise_type = "hiit"
-                        self.sets = self.set_spin.value()
-                        self.time = self.secs_spin.value()
-                        self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.time, 0)
-                    elif self.new_ex_combo.currentText() == "JOGGING":
-                        self.exercise_type = "cardio"
-                        if self.by_dist_btn.isChecked():
-                            self.distance = self.kim_spin.value()
-                        else:
-                            self.time = self.min_spin.value()
-                    elif self.new_ex_combo.currentText() == "MACHINES":
-                        self.exercise_type = "mach"
-                        self.reps = self.rep_spin.value()
-                        self.sets = self.set_spin.value()
-                    elif self.new_ex_combo.currentText() == "YOGA":
-                        self.exercise_type = "yoga"
+        def create_and_add_exercise():
+            self.exercise_title = self.exercise_name.toPlainText()
+            if self.new_ex_combo.currentIndex() != 0:
+                if self.new_ex_combo.currentText() == "CALISTHENICS":
+                    self.exercise_type = "bw"
+                    self.reps = self.rep_spin.value()
+                    self.sets = self.set_spin.value()
+                    self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps, 0)
+                elif self.new_ex_combo.currentText() == "FREE WEIGHTS":
+                    self.exercise_type = "fw"
+                    self.reps = self.rep_spin.value()
+                    self.sets = self.set_spin.value()
+                    self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps)
+                elif self.new_ex_combo.currentText() == "HIIT":
+                    self.exercise_type = "hiit"
+                    self.sets = self.set_spin.value()
+                    self.time = self.secs_spin.value()
+                    self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.time, 0)
+                elif self.new_ex_combo.currentText() == "JOGGING":
+                    self.exercise_type = "cardio"
+                    if self.by_dist_btn.isChecked():
+                        self.distance = self.kim_spin.value()
+                    else:
                         self.time = self.min_spin.value()
+                elif self.new_ex_combo.currentText() == "MACHINES":
+                    self.exercise_type = "mach"
+                    self.reps = self.rep_spin.value()
+                    self.sets = self.set_spin.value()
+                elif self.new_ex_combo.currentText() == "YOGA":
+                    self.exercise_type = "yoga"
+                    self.time = self.min_spin.value()
+
+        self.show_exercise_btn.clicked.connect(display_exercises)
+        self.add_exercise_btn.clicked.connect(create_and_add_exercise)
 
 
 # main
