@@ -70,9 +70,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QSpinBox" name="min_spin">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>440</x>
       <y>120</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -85,9 +85,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QSpinBox" name="kim_spin">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>440</x>
       <y>170</y>
-      <width>61</width>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -100,9 +100,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QPushButton" name="sets_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>500</x>
       <y>120</y>
-      <width>31</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -122,7 +122,7 @@ text-align: left;
    <widget class="QPushButton" name="reps_btn">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>500</x>
       <y>170</y>
       <width>31</width>
       <height>31</height>
@@ -146,7 +146,7 @@ text-align: left;
      <rect>
       <x>300</x>
       <y>120</y>
-      <width>121</width>
+      <width>131</width>
       <height>41</height>
      </rect>
     </property>
@@ -163,7 +163,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>300</x>
       <y>160</y>
-      <width>121</width>
+      <width>131</width>
       <height>41</height>
      </rect>
     </property>
@@ -189,7 +189,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
-     <string>      I WANT TO JOG</string>
+     <string>     I WANT TO JOG</string>
     </property>
    </widget>
    <widget class="QPushButton" name="back_btn">
@@ -245,9 +245,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>240</y>
+      <y>230</y>
       <width>291</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -267,7 +267,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;PRIMETIME&quot;;</string>
+     <string notr="true">font: 10pt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="browse_btn">

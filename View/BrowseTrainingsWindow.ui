@@ -90,7 +90,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>120</x>
       <y>20</y>
-      <width>261</width>
+      <width>321</width>
       <height>41</height>
      </rect>
     </property>
@@ -158,9 +158,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="show_exercise_btn">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>530</x>
       <y>20</y>
-      <width>131</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>

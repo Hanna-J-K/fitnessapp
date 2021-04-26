@@ -106,14 +106,14 @@ border: 5px solid #FB98AD;</string>
    <widget class="QLabel" name="label_goal">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>160</x>
       <y>280</y>
       <width>451</width>
       <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;font: 20pt &quot;PRIMETIME&quot;;
+     <string notr="true">background-color: #1D1D1D;font: 16pt &quot;PRIMETIME&quot;;
 border: 5px solid #FB98AD;</string>
     </property>
     <property name="text">
@@ -146,10 +146,10 @@ font: 16pt &quot;PRIMETIME&quot;;</string>
    <widget class="QPushButton" name="refresh_btn">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>240</y>
-      <width>161</width>
-      <height>31</height>
+      <x>690</x>
+      <y>20</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="cursor">

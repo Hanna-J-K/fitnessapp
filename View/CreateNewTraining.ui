@@ -25,7 +25,7 @@ color: #FB98AD</string>
    <widget class="QPushButton" name="choose_type_btn">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>120</x>
       <y>20</y>
       <width>452</width>
       <height>45</height>

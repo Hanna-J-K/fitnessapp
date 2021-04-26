@@ -44,7 +44,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>120</x>
       <y>20</y>
-      <width>321</width>
+      <width>401</width>
       <height>41</height>
      </rect>
     </property>
@@ -60,9 +60,9 @@ border: none;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>130</y>
+      <y>150</y>
       <width>231</width>
-      <height>331</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -73,9 +73,9 @@ border: none;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>90</y>
+      <y>100</y>
       <width>231</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -154,7 +154,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
+font: 7pt &quot;PRIMETIME&quot;;</string>
     </property>
     <item>
      <property name="text">
@@ -203,7 +203,7 @@ font: 8pt &quot;PRIMETIME&quot;;text-align: center;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
+font: 7pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="plainText">
      <string>TYPE EXERCISE NAME</string>
@@ -212,9 +212,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>400</x>
       <y>90</y>
-      <width>241</width>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>
@@ -340,9 +340,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QPushButton" name="sets_btn_2">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>620</x>
       <y>230</y>
-      <width>31</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -362,9 +362,9 @@ text-align: left;
    <widget class="QSpinBox" name="min_spin">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>580</x>
       <y>230</y>
-      <width>51</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -377,9 +377,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QSpinBox" name="kim_spin">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>580</x>
       <y>270</y>
-      <width>51</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -392,9 +392,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;
    <widget class="QPushButton" name="reps_btn_3">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>620</x>
       <y>270</y>
-      <width>31</width>
+      <width>41</width>
       <height>31</height>
      </rect>
     </property>
@@ -416,13 +416,13 @@ text-align: left;
      <rect>
       <x>450</x>
       <y>230</y>
-      <width>111</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
+font: 7pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BY TIME</string>
@@ -433,13 +433,13 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
      <rect>
       <x>450</x>
       <y>270</y>
-      <width>111</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1D1D1D;border: 3px solid #FB98AD;
-font: 8pt &quot;PRIMETIME&quot;;</string>
+font: 7pt &quot;PRIMETIME&quot;;</string>
     </property>
     <property name="text">
      <string>BY DISTANCE</string>
@@ -448,9 +448,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>450</x>
       <y>120</y>
-      <width>171</width>
+      <width>191</width>
       <height>16</height>
      </rect>
     </property>
@@ -459,7 +459,7 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
 border: none;</string>
     </property>
     <property name="text">
-     <string> FILL IN APPROPRIATE INFO ONLY</string>
+     <string>  FILL IN APPROPRIATE INFO ONLY</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -478,9 +478,9 @@ border: none;</string>
    <widget class="QPushButton" name="show_exercise_btn">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>30</y>
-      <width>131</width>
+      <x>630</x>
+      <y>20</y>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>

@@ -163,7 +163,7 @@ text-align: left;
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>61</width>
+      <width>81</width>
       <height>41</height>
      </rect>
     </property>
@@ -253,9 +253,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>250</y>
+      <y>240</y>
       <width>291</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -288,9 +288,9 @@ font: 8pt &quot;PRIMETIME&quot;;</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>10</y>
-      <width>401</width>
+      <x>120</x>
+      <y>20</y>
+      <width>491</width>
       <height>51</height>
      </rect>
     </property>
