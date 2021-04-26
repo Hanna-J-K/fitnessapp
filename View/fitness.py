@@ -674,15 +674,19 @@ class EditTrainingWindow(QMainWindow):
                     self.exercise_type = "cardio"
                     if self.by_dist_btn.isChecked():
                         self.distance = self.kim_spin.value()
+                        self.training.create_exercise(self.exercise_title, self.exercise_type, 0, 0, self.distance)
                     else:
                         self.time = self.min_spin.value()
+                        self.training.create_exercise(self.exercise_title, self.exercise_type, 0, self.time, 0)
                 elif self.new_ex_combo.currentText() == "MACHINES":
                     self.exercise_type = "mach"
                     self.reps = self.rep_spin.value()
                     self.sets = self.set_spin.value()
+                    self.training.create_exercise(self.exercise_title, self.exercise_type, self.sets, self.reps)
                 elif self.new_ex_combo.currentText() == "YOGA":
                     self.exercise_type = "yoga"
                     self.time = self.min_spin.value()
+                    self.training.create_exercise(self.exercise_title, self.exercise_type, 0, 0, self.time)
 
         def remove_exercise():
             print("REmoving exercise section")
