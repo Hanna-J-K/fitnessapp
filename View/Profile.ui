@@ -202,7 +202,7 @@ font: 8pt &quot;PRIMETIME&quot;;
 </string>
     </property>
     <property name="text">
-     <string>SAVE CHANGES</string>
+     <string>SAVE PROFILE</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -221,7 +221,7 @@ font: 8pt &quot;PRIMETIME&quot;;
      <string>   NAME</string>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="height">
+   <widget class="QPlainTextEdit" name="height_btn">
     <property name="geometry">
      <rect>
       <x>320</x>

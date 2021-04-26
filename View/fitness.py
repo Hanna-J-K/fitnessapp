@@ -12,6 +12,7 @@ import copy
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.uic import loadUi
+from PyQt5 import QtCore as QtC
 
 from FitnessApp.Calisthenics import Calisthenics
 from FitnessApp.ExerciseRepetitive import ExerciseRepetitive
@@ -68,6 +69,8 @@ def go_to_new_training(training):  # specific windows for all types of training
 # global variables storing information needed to be shared and accessed between all windows
 users_trainings = []
 training_to_edit = 0
+users_goal = "EDIT YOUR GOAL IN PROFILE SETTINGS"
+user_name = "BLINK"
 
 
 class MainWindow(QMainWindow):
@@ -78,7 +81,14 @@ class MainWindow(QMainWindow):
 
         print("You are in main menu")
 
+        # ----------- GUI CLASS METHODS ----------- #
+        def refresh_info():
+            self.label_goal.setText(users_goal)
+            self.profile_btn.setText("Hi, " + user_name + "!")
+
         # ----------- GUI CONTROLS ----------- #
+
+        self.refresh_btn.clicked.connect(refresh_info)
 
         # navigation from main window to other windows
         self.browse_btn.clicked.connect(go_to_browse)
@@ -221,13 +231,32 @@ class CreateNewTraining(QMainWindow):
 
 
 class Profile(QMainWindow):
+    submitted = QtC.pyqtSignal(str, str)
+
     def __init__(self):
         super(Profile, self).__init__()
         loadUi("Profile.ui", self)
+        self.user_age = ""
+        self.user_weight = ""
+        self.user_height = ""
+
+        # ----------- GUI CLASS METHODS ----------- #
+
+        def save_the_profile():
+            global user_name
+            global users_goal
+            user_name = self.name.toPlainText()
+            users_goal = self.goal.toPlainText()
+            self.user_age = self.age.toPlainText()
+            self.user_height = self.height_btn.toPlainText()
+            self.user_weight = self.weight.toPlainText()
+
+            self.submitted.emit(self.name.toPlainText(), self.goal.toPlainText())
 
         # ----------- GUI CONTROLS ----------- #
 
         self.main_menu_btn.clicked.connect(go_to_main)
+        self.save_btn.clicked.connect(save_the_profile)
 
 
 class NewCalisthenicsTraining(QMainWindow):
