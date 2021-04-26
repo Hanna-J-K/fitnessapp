@@ -7,8 +7,8 @@ class Cardio(Training):
     def __init__(self, name, exercise_list):
         super().__init__(name, exercise_list)
 
-    def remove_exercise(self, exercise_name):
-        self.exercise_list.remove(exercise_name)
+    def remove_exercise(self, index_of_exercise):
+        del self.exercise_list[index_of_exercise]
 
     def add_exercise(self, exercise_name):
         self.exercise_list.append(exercise_name)

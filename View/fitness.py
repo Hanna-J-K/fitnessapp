@@ -568,6 +568,9 @@ class EditTrainingWindow(QMainWindow):
         self.training = None
 
         # ----------- GUI CLASS METHODS ----------- #
+
+        # display all the training's exercises when the 'show' button is pressed
+        # 'show' button also refreshes the panel after successfully adding exercises
         def display_exercises():
             self.training = users_trainings[training_to_edit]
             self.all_exercises = copy.deepcopy(self.training.exercise_list)
@@ -591,7 +594,9 @@ class EditTrainingWindow(QMainWindow):
                 elif exer.exercise_type == "yoga":
                     self.exercises_panel.addItem(exer.name + "   " +
                                                  str(exer.time) + "min")
+            self.training_title.setPlainText(self.training.name)
 
+        # create and add custom exercise to the training being edited
         def create_and_add_exercise():
             self.exercise_title = self.exercise_name.toPlainText()
             if self.new_ex_combo.currentIndex() != 0:
@@ -624,8 +629,25 @@ class EditTrainingWindow(QMainWindow):
                     self.exercise_type = "yoga"
                     self.time = self.min_spin.value()
 
+        def remove_exercise():
+            index = self.exercises_panel.currentRow()
+            throwaway = self.exercises_panel.currentItem().text()
+            self.all_exercises = copy.deepcopy(self.training.exercise_list)
+            print(throwaway)
+            for exer in self.all_exercises:
+                if exer.name == throwaway:
+                    index2 = self.all_exercises.index(exer)
+                    self.training.remove_exercise(index2)
+            for name_ex in self.training.exercise_list:
+                print(name_ex.name)
+            self.exercises_panel.takeItem(index)
+
+        # ----------- GUI CONTROLS ----------- #
+
+        # controls for functionalities and features
         self.show_exercise_btn.clicked.connect(display_exercises)
         self.add_exercise_btn.clicked.connect(create_and_add_exercise)
+        self.remove_exercise_btn.clicked.connect(remove_exercise)
 
 
 # main
