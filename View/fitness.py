@@ -713,6 +713,7 @@ class EditTrainingWindow(QMainWindow):
         self.show_exercise_btn.clicked.connect(display_exercises)
         self.add_exercise_btn.clicked.connect(create_and_add_exercise)
         self.remove_exercise_btn.clicked.connect(remove_exercise)
+        self.back_btn.clicked.connect(go_to_browse)
 
 
 # main

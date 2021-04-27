@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>FITNESS APP</string>
   </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
   <property name="styleSheet">
    <string notr="true">
 border: 10px solid #FB98AD;background-color: #0C0C0C;
@@ -113,11 +116,14 @@ border: 5px solid #FB98AD;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #1D1D1D;font: 16pt &quot;PRIMETIME&quot;;
+     <string notr="true">background-color: #1D1D1D;font: 10pt &quot;PRIMETIME&quot;;
 border: 5px solid #FB98AD;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
