@@ -1,127 +1,116 @@
 @startuml FitnessUml
-skinparam Style strictuml
+
 class User {
     String name
     int age
     int weight
     int height
-    Goal goal
-    -addNewGoal()
-    -modifyGoal()
-    -setGoal()
-    -setIntensity()
-    +addTraining()
-    +modifyTraining()
+    List<Goal> goal
+    -add_new_goal()
+    -add_training()
 }
 
 class Goal {
-    String name
     String description
-    date goalDate
 }
 
-class TrainingDataBase {
-    dict trainings
-    +chooseTraining()
-    +removeTraining()
-}
-
-class ExerciseDataBase {
-    dict exercises
-    -addExercise()
-    +chooseExercise()
-    +removeExercise()
-}
 
 class Exercise {
-    String name
-    bool hasEquipment
-    enum type
-    +addEquipment()
-    +removeEquipment()
+    {abstract} String name
+    {abstract} String exercise_type
+    {abstract} int sets
+    {abstract} int reps
+    {abstract} int time
+    {abstract} int distance
 }
 
-class Equipment {
-    String name
-    int weight
-    +modifyWeight()
+class ExerciseRepetitive {
+    {abstract} String name
+    {abstract} String exercise_type
+    {abstract} int sets
+    {abstract} int reps
+    {abstract} int time
+    {abstract} int distance
 }
+
+class ExerciseTimed {
+    {abstract} String name
+    {abstract} String exercise_type
+    {abstract} int sets
+    {abstract} int reps
+    {abstract} int time
+    {abstract} int distance
+}
+
 
 abstract class Training {
-    {abstract} addExercise()
-    {abstract} removeExercise()
-    {abstract} createExercise()
+    {abstract} String name
+    {abstract} List<String> exercise_type
+    {abstract} add_exercise()
+    {abstract} remove_exercise()
+    {abstract} create_exercise()
 }
 
 class BodyWeight {
-    int reps
-    int sets
-    {abstract} addSets()
-    {abstract} removeSets()
+    {abstract} String name
+    {abstract} List<String> exercise_type
+    {abstract} add_exercise()
+    {abstract} remove_exercise()
+    {abstract} create_exercise() : <<overloaded>>
 }
 
 class Cardio {
-    time time 
-    float distance
-    {abstract} addDistance()
-    {abstract} addTime()
+    {abstract} String name
+    {abstract} List<String> exercise_type
+    {abstract} add_exercise()
+    {abstract} remove_exercise()
+    {abstract} create_exercise() : <<overloaded>>
 
 }
 
 class WeightLifting {
-    int reps
-    int sets
-    {abstract} addSets()
-    {abstract} removeSets()
-}
-
-class Mixed {
-    int reps
-    int sets
-    {abstract} addSets()
-    {abstract} removeSets()
+    {abstract} String name
+    {abstract} List<String> exercise_type
+    {abstract} add_exercise()
+    {abstract} remove_exercise()
+    {abstract} create_exercise() : <<overloaded>>
 }
 
 class Calisthenics {
-    int reps
-    int sets
+    
 }
 
 class Yoga {
-    time time
-    +addTime()
+    
 }
 
 class HIIT {
-    time time
-    int sets
+    
 }
 
 class Jogging {
-    time time
-    float distance
+    
 }
 
 class Machines {
-    int reps
-    int sets
+    
 }
 
 class FreeWeight {
-    int reps
-    int sets
+    
 }
 
 User o-- Goal
 User *-- Training
-Equipment -o Exercise
+
+ExerciseTimed --|> Exercise
+ExerciseRepetitive --|> Exercise
+
 Exercise -* Training
-TrainingDataBase --o Training
-ExerciseDataBase --o Exercise
+
 Training <|-- BodyWeight
 Training <|-- Cardio
 Training <|-- WeightLifting
-Training <|-- Mixed
 
 BodyWeight <|-- Calisthenics
 BodyWeight <|-- Yoga
