@@ -8,6 +8,7 @@ import sys
 import copy
 import pickle
 import os.path
+import math
 
 # sys.path.insert(0, "C:\\Users\\hanka\\PycharmProjects\\fitnessapp\\FitnessApp")
 
@@ -81,7 +82,13 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         loadUi("MainMenu.ui", self)
 
-        print("You are in main menu")
+        pi1 = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 6) + (1.47 * 0) + (1.06 * 1))))
+        print("Pi: Exercise Repetitive")
+        print(pi1)
+
+        pi2 = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 6) + (1.47 * 0) + (1.06 * 1))))
+        print("Pi: Exercise Timed")
+        print(pi2)
 
         # ----------- GUI CLASS METHODS ----------- #
         def refresh_info():
@@ -289,8 +296,9 @@ class NewCalisthenicsTraining(QMainWindow):
     def __init__(self):
         super(NewCalisthenicsTraining, self).__init__()
         loadUi("NewCalisthenicsTraining.ui", self)
-
-        print("You are creating new calisthenics training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: Calisthenics")
+        print(pi)
 
         self.reps = 0
         self.sets = 0
@@ -342,7 +350,9 @@ class NewFreeWeightTraining(QMainWindow):
         super(NewFreeWeightTraining, self).__init__()
         loadUi("NewFreeWeightTraining.ui", self)
 
-        print("You are creating new free weight training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: FreeWeight")
+        print(pi)
 
         self.reps = 0
         self.sets = 0
@@ -397,7 +407,9 @@ class NewMachinesTraining(QMainWindow):
         super(NewMachinesTraining, self).__init__()
         loadUi("NewMachinesTraining.ui", self)
 
-        print("You are creating new machines training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: Machines")
+        print(pi)
 
         self.reps = 0
         self.sets = 0
@@ -453,7 +465,9 @@ class NewJoggingTraining(QMainWindow):
         super(NewJoggingTraining, self).__init__()
         loadUi("NewJoggingTraining.ui", self)
 
-        print("You are creating new free weight training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: Jogging")
+        print(pi)
 
         self.time = 0
         self.distance = 0
@@ -508,7 +522,9 @@ class NewHiitTraining(QMainWindow):
         super(NewHiitTraining, self).__init__()
         loadUi("NewHiitTraining.ui", self)
 
-        print("You are creating new HIIT training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: Hiit")
+        print(pi)
 
         self.time = 0
         self.sets = 0
@@ -564,7 +580,9 @@ class NewYogaTraining(QMainWindow):
         super(NewYogaTraining, self).__init__()
         loadUi("NewYogaTraining.ui", self)
 
-        print("You are creating new yoga training!")
+        pi = 1 / (1 + (math.e ** -(-3.97 + (0.464 * 2) + (1.47 * 0) + (1.06 * 2))))
+        print("Pi: Yoga")
+        print(pi)
 
         self.time = 0
         self.training_title = "NEW TRAINING"

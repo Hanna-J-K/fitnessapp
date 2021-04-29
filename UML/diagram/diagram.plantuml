@@ -5,9 +5,6 @@ class User {
     int age
     int weight
     int height
-    List<Goal> goal
-    -add_new_goal()
-    -add_training()
 }
 
 class Goal {
